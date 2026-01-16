@@ -1,0 +1,247 @@
+{
+  "info": {
+    "name": "Khareetaty-AI API",
+    "description": "API collection for Khareetaty-AI Geographic Intelligence Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{AUTH_TOKEN}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "BASE_URL",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "AUTH_TOKEN",
+      "value": "khareetaty-secure",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "System Status",
+      "item": [
+        {
+          "name": "Get Live Status",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/status/live",
+              "host": ["{{BASE_URL}}"],
+              "path": ["status", "live"]
+            },
+            "description": "Get comprehensive system status including database, services, and pipeline health"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Geographic Data",
+      "item": [
+        {
+          "name": "Get All Geographic Options",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/geo/options",
+              "host": ["{{BASE_URL}}"],
+              "path": ["geo", "options"]
+            },
+            "description": "Get all available governorates, districts, police zones, and blocks"
+          }
+        },
+        {
+          "name": "Get Governorates",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/geo/governorates",
+              "host": ["{{BASE_URL}}"],
+              "path": ["geo", "governorates"]
+            }
+          }
+        },
+        {
+          "name": "Get Districts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/geo/districts?governorate=Capital",
+              "host": ["{{BASE_URL}}"],
+              "path": ["geo", "districts"],
+              "query": [
+                {
+                  "key": "governorate",
+                  "value": "Capital"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Get Police Zones",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/geo/police-zones",
+              "host": ["{{BASE_URL}}"],
+              "path": ["geo", "police-zones"]
+            }
+          }
+        },
+        {
+          "name": "Resolve Coordinates",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"lat\": 29.3759,\n  \"lon\": 47.9774\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/geo/resolve",
+              "host": ["{{BASE_URL}}"],
+              "path": ["geo", "resolve"]
+            },
+            "description": "Resolve coordinates to geographic zones"
+          }
+        },
+        {
+          "name": "Get GeoJSON Layer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/geo/geojson/governorates",
+              "host": ["{{BASE_URL}}"],
+              "path": ["geo", "geojson", "governorates"]
+            },
+            "description": "Get GeoJSON data for a specific layer (governorates, districts, blocks, police_zones)"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Analytics",
+      "item": [
+        {
+          "name": "Run Analytics Pipeline",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/analytics/run",
+              "host": ["{{BASE_URL}}"],
+              "path": ["analytics", "run"]
+            },
+            "description": "Trigger ETL, clustering, and forecasting pipeline"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Alerts",
+      "item": [
+        {
+          "name": "Send Manual Alert",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"message\": \"Test alert from Khareetaty-AI\",\n  \"phone\": \"+96566338736\"\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/alerts/send",
+              "host": ["{{BASE_URL}}"],
+              "path": ["alerts", "send"]
+            },
+            "description": "Send a manual WhatsApp alert"
+          }
+        },
+        {
+          "name": "Trigger Hotspot Alerts",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/alerts/trigger-hotspot",
+              "host": ["{{BASE_URL}}"],
+              "path": ["alerts", "trigger-hotspot"]
+            },
+            "description": "Trigger automated hotspot detection alerts"
+          }
+        },
+        {
+          "name": "Trigger Forecast Alerts",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/alerts/trigger-forecast",
+              "host": ["{{BASE_URL}}"],
+              "path": ["alerts", "trigger-forecast"]
+            },
+            "description": "Trigger forecast-based alerts"
+          }
+        },
+        {
+          "name": "Get Alert History",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/alerts/history?limit=50",
+              "host": ["{{BASE_URL}}"],
+              "path": ["alerts", "history"],
+              "query": [
+                {
+                  "key": "limit",
+                  "value": "50"
+                }
+              ]
+            },
+            "description": "Get recent alert history"
+          }
+        },
+        {
+          "name": "Get Alert Statistics",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{BASE_URL}}/alerts/stats",
+              "host": ["{{BASE_URL}}"],
+              "path": ["alerts", "stats"]
+            },
+            "description": "Get alert statistics (total, success rate, by type)"
+          }
+        }
+      ]
+    }
+  ]
+}

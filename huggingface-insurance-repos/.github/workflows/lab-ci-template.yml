@@ -1,0 +1,85 @@
+name: Lab CI/CD Template
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+        
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt || echo "No requirements.txt found"
+        pip install gradio pytest huggingface_hub
+        
+    - name: Validate imports
+      run: |
+        python -c "import gradio" && echo "✓ Gradio import successful"
+        if [ -f "app.py" ]; then
+          python -m py_compile app.py && echo "✓ app.py compiles successfully"
+        fi
+        
+    - name: Run smoke tests
+      run: |
+        if [ -f "test_smoke.py" ]; then
+          python test_smoke.py
+        else
+          echo "No smoke tests found, skipping"
+        fi
+        
+    - name: Deploy to Hugging Face Space
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      env:
+        HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        HF_USERNAME: ${{ vars.HF_USERNAME }}
+      run: |
+        if [ -n "$HF_TOKEN" ] && [ -n "$HF_USERNAME" ]; then
+          pip install huggingface_hub
+          python -c "
+          from huggingface_hub import HfApi, create_repo
+          import os
+          
+          # Get repo name from GITHUB_REPOSITORY
+          repo_name = os.environ.get('GITHUB_REPOSITORY').split('/')[-1]
+          repo_id = f'{os.environ.get(\"HF_USERNAME\")}/{repo_name}'
+          
+          print(f'Deploying to {repo_id}')
+          
+          # Create/update space
+          create_repo(
+              repo_id=repo_id,
+              repo_type='space',
+              space_sdk='gradio',
+              exist_ok=True,
+              private=False
+          )
+          
+          # Upload files
+          api = HfApi()
+          files = ['app.py', 'requirements.txt', 'README.md', 'model_card.md']
+          for file in files:
+              if os.path.exists(file):
+                  api.upload_file(
+                      path_or_fileobj=file,
+                      path_in_repo=file,
+                      repo_id=repo_id,
+                      repo_type='space'
+                  )
+                  print(f'Uploaded {file}')
+          print(f'Successfully deployed to https://huggingface.co/spaces/{repo_id}')
+          "
+        else
+          echo "HF_TOKEN or HF_USERNAME not set, skipping deployment"
+        fi

@@ -18,77 +18,63 @@ This repository provides **synthetic insurance datasets** for testing, developme
 
 ## 📊 Datasets Included
 
-### 1. Claims Data (`data/claims_data.csv`)
-Synthetic insurance claims covering auto and home insurance types.
+### 1. Fraud Cases Synthetic (`data/fraud_cases_synthetic.csv`)
+Synthetic fraud detection training data for insurance claims triage.
 
 **Columns:**
-- `claim_id`: Unique claim identifier
-- `policy_id`: Associated policy ID
-- `claim_date`: Date claim was filed
-- `claim_type`: Type of claim (Auto Collision, Home Fire, etc.)
-- `claim_amount`: Claimed amount in USD
-- `claim_status`: Current status (Settled, In Progress)
-- `settlement_amount`: Final settlement amount
-- `days_to_settle`: Number of days to settle
-- `claimant_age`: Age of claimant
-- `incident_severity`: Severity level (Minor, Moderate, Severe)
+- `policy_type`: Type of insurance policy
+- `claimant_profile_risk`: Risk profile of claimant
+- `incident_pattern`: Pattern of incident occurrence
+- `document_consistency_score`: Score for document consistency (0-100)
+- `anomaly_score`: Anomaly detection score (0-100)
+- `synthetic_flag_label`: Fraud flag label (Low/Medium/High)
 
-**Sample Size:** 25 records
+**Sample Size:** 250 records
 
-### 2. Policies Data (`data/policies_data.csv`)
-Synthetic insurance policies for auto and home coverage.
+### 2. Claims Lifecycle IFRS Synthetic (`data/claims_lifecycle_ifrs_synthetic.csv`)
+Synthetic claims data for IFRS 17 accrual estimation and lifecycle analysis.
 
 **Columns:**
-- `policy_id`: Unique policy identifier
-- `policy_type`: Type of policy (Auto, Home)
-- `policy_holder_name`: Synthetic policyholder name
-- `policy_start_date`: Policy start date
-- `policy_end_date`: Policy end date
-- `premium_amount`: Annual premium in USD
-- `coverage_amount`: Total coverage limit
-- `deductible`: Deductible amount
-- `policy_status`: Current status
-- `risk_score`: Risk assessment score (0-1)
+- `claim_stage`: Current stage of claim processing
+- `expected_severity`: Expected severity level
+- `incurred_but_not_reported_flag`: IBNR indicator (Yes/No)
+- `accrual_factor`: Accrual multiplier factor
+- `expected_loss_amount`: Expected loss amount in USD
+- `uncertainty_score`: Uncertainty score (0-100)
 
-**Sample Size:** 25 records
+**Sample Size:** 251 records
 
-### 3. Fraud Indicators (`data/fraud_indicators.csv`)
-Synthetic fraud detection indicators for claims.
+### 3. Policy Clauses Snippets (`data/policy_clauses_snippets.txt`)
+Synthetic policy clause text snippets for compliance and RAG testing.
 
-**Columns:**
-- `indicator_id`: Unique indicator ID
-- `claim_id`: Associated claim ID
-- `indicator_type`: Type of fraud indicator
-- `risk_level`: Risk level (Low, Medium, High)
-- `indicator_description`: Description of the indicator
-- `detection_date`: Date indicator was detected
-- `verified_status`: Verification status
+**Content:** 12 fabricated policy clause paragraphs covering various insurance topics
 
-**Sample Size:** 15 records
+**Sample Size:** 12 paragraphs
 
 ## 🚀 Usage
 
 ### Interactive Explorer
 Use the Gradio app to explore the datasets interactively:
 - View dataset statistics
-- Filter claims by type and status
-- Search policies by ID
-- Analyze fraud indicators
+- Preview fraud cases data
+- Explore IFRS claims lifecycle data
+- Read policy clause snippets
 
 ### Download & Use
-Download the CSV files from the `data/` directory for use in your projects:
+Download the files from the `data/` directory for use in your projects:
 
 ```python
 import pandas as pd
 
-# Load claims data
-claims_df = pd.read_csv('data/claims_data.csv')
+# Load fraud cases data
+fraud_df = pd.read_csv('data/fraud_cases_synthetic.csv')
 
-# Load policies data
-policies_df = pd.read_csv('data/policies_data.csv')
+# Load IFRS claims data
+claims_df = pd.read_csv('data/claims_lifecycle_ifrs_synthetic.csv')
 
-# Load fraud indicators
-fraud_df = pd.read_csv('data/fraud_indicators.csv')
+# Load policy clauses
+with open('data/policy_clauses_snippets.txt', 'r') as f:
+    clauses = f.read()
 ```
 
 ## ⚠️ Disclaimer
@@ -132,7 +118,7 @@ Check out other insurance AI tools:
 - **Format**: CSV files
 - **License**: MIT
 - **Data Source**: Fully synthetic, programmatically generated
-- **Size**: Small sample datasets (15-25 records each)
+- **Size**: Sample datasets (200+ records for CSV files, 12 clauses for text file)
 - **Purpose**: Educational and testing only
 
 ---

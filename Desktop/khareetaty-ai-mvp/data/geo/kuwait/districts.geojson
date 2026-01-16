@@ -1,0 +1,672 @@
+{
+  "type": "FeatureCollection",
+  "name": "kuwait_districts",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-001",
+        "name_en": "Kuwait City",
+        "name_ar": "مدينة الكويت",
+        "governorate_code": "KW-CA",
+        "governorate": "Capital"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.975, 29.365],
+            [47.995, 29.365],
+            [47.995, 29.380],
+            [47.975, 29.380],
+            [47.975, 29.365]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-002",
+        "name_en": "Dasman",
+        "name_ar": "دسمان",
+        "governorate_code": "KW-CA",
+        "governorate": "Capital"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.995, 29.365],
+            [48.015, 29.365],
+            [48.015, 29.380],
+            [47.995, 29.380],
+            [47.995, 29.365]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-003",
+        "name_en": "Sharq",
+        "name_ar": "شرق",
+        "governorate_code": "KW-CA",
+        "governorate": "Capital"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.015, 29.365],
+            [48.035, 29.365],
+            [48.035, 29.380],
+            [48.015, 29.380],
+            [48.015, 29.365]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-004",
+        "name_en": "Jibla",
+        "name_ar": "جبلة",
+        "governorate_code": "KW-CA",
+        "governorate": "Capital"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.975, 29.380],
+            [47.995, 29.380],
+            [47.995, 29.395],
+            [47.975, 29.395],
+            [47.975, 29.380]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-005",
+        "name_en": "Kaifan",
+        "name_ar": "كيفان",
+        "governorate_code": "KW-CA",
+        "governorate": "Capital"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.995, 29.380],
+            [48.015, 29.380],
+            [48.015, 29.395],
+            [47.995, 29.395],
+            [47.995, 29.380]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "HA-001",
+        "name_en": "Hawalli",
+        "name_ar": "حولي",
+        "governorate_code": "KW-HA",
+        "governorate": "Hawalli"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.025, 29.310],
+            [48.045, 29.310],
+            [48.045, 29.325],
+            [48.025, 29.325],
+            [48.025, 29.310]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "HA-002",
+        "name_en": "Salmiya",
+        "name_ar": "السالمية",
+        "governorate_code": "KW-HA",
+        "governorate": "Hawalli"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.045, 29.310],
+            [48.065, 29.310],
+            [48.065, 29.325],
+            [48.045, 29.325],
+            [48.045, 29.310]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "HA-003",
+        "name_en": "Rumaithiya",
+        "name_ar": "الرميثية",
+        "governorate_code": "KW-HA",
+        "governorate": "Hawalli"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.065, 29.310],
+            [48.085, 29.310],
+            [48.085, 29.325],
+            [48.065, 29.325],
+            [48.065, 29.310]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "HA-004",
+        "name_en": "Bayan",
+        "name_ar": "بيان",
+        "governorate_code": "KW-HA",
+        "governorate": "Hawalli"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.025, 29.325],
+            [48.045, 29.325],
+            [48.045, 29.340],
+            [48.025, 29.340],
+            [48.025, 29.325]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "HA-005",
+        "name_en": "Mishref",
+        "name_ar": "مشرف",
+        "governorate_code": "KW-HA",
+        "governorate": "Hawalli"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.045, 29.325],
+            [48.065, 29.325],
+            [48.065, 29.340],
+            [48.045, 29.340],
+            [48.045, 29.325]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "FA-001",
+        "name_en": "Farwaniya",
+        "name_ar": "الفروانية",
+        "governorate_code": "KW-FA",
+        "governorate": "Farwaniya"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.925, 29.270],
+            [47.945, 29.270],
+            [47.945, 29.290],
+            [47.925, 29.290],
+            [47.925, 29.270]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "FA-002",
+        "name_en": "Jleeb Al-Shuyoukh",
+        "name_ar": "جليب الشيوخ",
+        "governorate_code": "KW-FA",
+        "governorate": "Farwaniya"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.945, 29.270],
+            [47.965, 29.270],
+            [47.965, 29.290],
+            [47.945, 29.290],
+            [47.945, 29.270]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "FA-003",
+        "name_en": "Abdullah Al-Mubarak",
+        "name_ar": "عبدالله المبارك",
+        "governorate_code": "KW-FA",
+        "governorate": "Farwaniya"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.965, 29.270],
+            [47.985, 29.270],
+            [47.985, 29.290],
+            [47.965, 29.290],
+            [47.965, 29.270]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "FA-004",
+        "name_en": "Khaitan",
+        "name_ar": "خيطان",
+        "governorate_code": "KW-FA",
+        "governorate": "Farwaniya"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.925, 29.290],
+            [47.945, 29.290],
+            [47.945, 29.310],
+            [47.925, 29.310],
+            [47.925, 29.290]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "FA-005",
+        "name_en": "Andalous",
+        "name_ar": "الأندلس",
+        "governorate_code": "KW-FA",
+        "governorate": "Farwaniya"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.945, 29.290],
+            [47.965, 29.290],
+            [47.965, 29.310],
+            [47.945, 29.310],
+            [47.945, 29.290]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MU-001",
+        "name_en": "Mubarak Al-Kabeer",
+        "name_ar": "مبارك الكبير",
+        "governorate_code": "KW-MU",
+        "governorate": "Mubarak Al-Kabeer"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.025, 29.215],
+            [48.045, 29.215],
+            [48.045, 29.235],
+            [48.025, 29.235],
+            [48.025, 29.215]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MU-002",
+        "name_en": "Sabah Al-Salem",
+        "name_ar": "صباح السالم",
+        "governorate_code": "KW-MU",
+        "governorate": "Mubarak Al-Kabeer"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.045, 29.215],
+            [48.065, 29.215],
+            [48.065, 29.235],
+            [48.045, 29.235],
+            [48.045, 29.215]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MU-003",
+        "name_en": "Adan",
+        "name_ar": "العدان",
+        "governorate_code": "KW-MU",
+        "governorate": "Mubarak Al-Kabeer"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.065, 29.215],
+            [48.085, 29.215],
+            [48.085, 29.235],
+            [48.065, 29.235],
+            [48.065, 29.215]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MU-004",
+        "name_en": "Qurain",
+        "name_ar": "القرين",
+        "governorate_code": "KW-MU",
+        "governorate": "Mubarak Al-Kabeer"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.025, 29.235],
+            [48.045, 29.235],
+            [48.045, 29.255],
+            [48.025, 29.255],
+            [48.025, 29.235]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MU-005",
+        "name_en": "Funaitees",
+        "name_ar": "الفنيطيس",
+        "governorate_code": "KW-MU",
+        "governorate": "Mubarak Al-Kabeer"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.045, 29.235],
+            [48.065, 29.235],
+            [48.065, 29.255],
+            [48.045, 29.255],
+            [48.045, 29.235]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "AH-001",
+        "name_en": "Ahmadi",
+        "name_ar": "الأحمدي",
+        "governorate_code": "KW-AH",
+        "governorate": "Ahmadi"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.050, 29.050],
+            [48.100, 29.050],
+            [48.100, 29.100],
+            [48.050, 29.100],
+            [48.050, 29.050]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "AH-002",
+        "name_en": "Fahaheel",
+        "name_ar": "الفحيحيل",
+        "governorate_code": "KW-AH",
+        "governorate": "Ahmadi"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.100, 29.050],
+            [48.150, 29.050],
+            [48.150, 29.100],
+            [48.100, 29.100],
+            [48.100, 29.050]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "AH-003",
+        "name_en": "Mangaf",
+        "name_ar": "المنقف",
+        "governorate_code": "KW-AH",
+        "governorate": "Ahmadi"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.150, 29.050],
+            [48.200, 29.050],
+            [48.200, 29.100],
+            [48.150, 29.100],
+            [48.150, 29.050]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "AH-004",
+        "name_en": "Abu Halifa",
+        "name_ar": "أبو حليفة",
+        "governorate_code": "KW-AH",
+        "governorate": "Ahmadi"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.050, 29.100],
+            [48.100, 29.100],
+            [48.100, 29.150],
+            [48.050, 29.150],
+            [48.050, 29.100]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "AH-005",
+        "name_en": "Mahboula",
+        "name_ar": "المهبولة",
+        "governorate_code": "KW-AH",
+        "governorate": "Ahmadi"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.100, 29.100],
+            [48.150, 29.100],
+            [48.150, 29.150],
+            [48.100, 29.150],
+            [48.100, 29.100]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "JA-001",
+        "name_en": "Jahra",
+        "name_ar": "الجهراء",
+        "governorate_code": "KW-JA",
+        "governorate": "Jahra"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.650, 29.650],
+            [47.750, 29.650],
+            [47.750, 29.750],
+            [47.650, 29.750],
+            [47.650, 29.650]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "JA-002",
+        "name_en": "Qasr",
+        "name_ar": "القصر",
+        "governorate_code": "KW-JA",
+        "governorate": "Jahra"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.750, 29.650],
+            [47.850, 29.650],
+            [47.850, 29.750],
+            [47.750, 29.750],
+            [47.750, 29.650]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "JA-003",
+        "name_en": "Sulaibiya",
+        "name_ar": "الصليبية",
+        "governorate_code": "KW-JA",
+        "governorate": "Jahra"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.850, 29.650],
+            [47.950, 29.650],
+            [47.950, 29.750],
+            [47.850, 29.750],
+            [47.850, 29.650]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "JA-004",
+        "name_en": "Taima",
+        "name_ar": "تيماء",
+        "governorate_code": "KW-JA",
+        "governorate": "Jahra"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.650, 29.750],
+            [47.750, 29.750],
+            [47.750, 29.850],
+            [47.650, 29.850],
+            [47.650, 29.750]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "JA-005",
+        "name_en": "Naeem",
+        "name_ar": "النعيم",
+        "governorate_code": "KW-JA",
+        "governorate": "Jahra"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.750, 29.750],
+            [47.850, 29.750],
+            [47.850, 29.850],
+            [47.750, 29.850],
+            [47.750, 29.750]
+          ]
+        ]
+      }
+    }
+  ]
+}

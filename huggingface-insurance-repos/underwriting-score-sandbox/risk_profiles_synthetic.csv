@@ -1,0 +1,201 @@
+applicant_id,industry_segment,applicant_risk_profile,prior_claim_count,risk_band,explanation
+UW001,Technology,Low,0,Low,No prior claims with low inherent risk profile
+UW002,Construction,High,5,High,Multiple prior claims in high-risk industry
+UW003,Retail,Medium,2,Medium,Moderate claims history in standard risk sector
+UW004,Healthcare,Low,1,Low,Single claim with overall low risk assessment
+UW005,Manufacturing,High,7,High,Excessive claim frequency in manufacturing
+UW006,Technology,Medium,3,Medium,Above average claims for tech sector
+UW007,Professional Services,Low,0,Low,Clean history in low-risk professional category
+UW008,Construction,High,4,High,High-risk construction with multiple claims
+UW009,Hospitality,Medium,2,Medium,Tourism sector with moderate claim activity
+UW010,Retail,Low,1,Low,Single incident in retail operations
+UW011,Transportation,High,6,High,Fleet operations with frequent claims
+UW012,Education,Low,0,Low,Educational institution with no prior claims
+UW013,Technology,Low,0,Low,Startup with clean record
+UW014,Manufacturing,High,8,High,Heavy industry with significant claim history
+UW015,Healthcare,Medium,3,Medium,Medical facility with moderate claims
+UW016,Professional Services,Low,1,Low,Consulting firm with minimal claims
+UW017,Construction,High,5,High,Ongoing construction activity with claims
+UW018,Retail,Medium,2,Medium,Retail chain with standard risk profile
+UW019,Technology,Low,0,Low,Software company with no claims
+UW020,Hospitality,High,4,High,Hotel operations with elevated claims
+UW021,Transportation,Medium,3,Medium,Logistics company with moderate exposure
+UW022,Education,Low,0,Low,University with clean history
+UW023,Manufacturing,High,6,High,Production facility with frequent incidents
+UW024,Healthcare,Low,1,Low,Clinic with single minor claim
+UW025,Professional Services,Medium,2,Medium,Legal practice with moderate claims
+UW026,Construction,High,7,High,Large-scale construction with multiple claims
+UW027,Retail,Low,0,Low,Small retail operation with no history
+UW028,Technology,Medium,2,Medium,IT services with some claim activity
+UW029,Hospitality,Low,1,Low,Restaurant with single incident
+UW030,Transportation,High,5,High,Trucking company with frequent claims
+UW031,Education,Low,0,Low,Private school with no claims
+UW032,Manufacturing,Medium,3,Medium,Assembly plant with moderate risk
+UW033,Healthcare,High,4,High,Hospital with elevated claim frequency
+UW034,Professional Services,Low,0,Low,Accounting firm with clean record
+UW035,Construction,High,6,High,Renovation projects with multiple claims
+UW036,Retail,Medium,2,Medium,Department store with standard exposure
+UW037,Technology,Low,1,Low,Cloud services provider with minimal claims
+UW038,Hospitality,High,5,High,Resort operations with frequent incidents
+UW039,Transportation,Medium,2,Medium,Delivery service with moderate claims
+UW040,Education,Low,0,Low,Training center with no history
+UW041,Manufacturing,High,7,High,Chemical plant with significant claims
+UW042,Healthcare,Low,1,Low,Dental practice with single claim
+UW043,Professional Services,Medium,3,Medium,Engineering firm with moderate activity
+UW044,Construction,High,5,High,Infrastructure project with claims
+UW045,Retail,Low,0,Low,Boutique shop with clean record
+UW046,Technology,Medium,2,Medium,Hardware manufacturer with some claims
+UW047,Hospitality,Low,1,Low,Café with single incident
+UW048,Transportation,High,6,High,Shipping company with frequent claims
+UW049,Education,Low,0,Low,Vocational school with no claims
+UW050,Manufacturing,Medium,3,Medium,Textile factory with moderate risk
+UW051,Healthcare,High,5,High,Emergency care with elevated claims
+UW052,Professional Services,Low,0,Low,Marketing agency with clean history
+UW053,Construction,High,8,High,Commercial building with multiple incidents
+UW054,Retail,Medium,2,Medium,Grocery chain with standard exposure
+UW055,Technology,Low,0,Low,Mobile app developer with no claims
+UW056,Hospitality,High,4,High,Casino operations with frequent claims
+UW057,Transportation,Medium,3,Medium,Bus service with moderate activity
+UW058,Education,Low,1,Low,Language school with single claim
+UW059,Manufacturing,High,6,High,Automotive plant with significant history
+UW060,Healthcare,Low,0,Low,Pharmacy with clean record
+UW061,Professional Services,Medium,2,Medium,Architecture firm with some claims
+UW062,Construction,High,5,High,Residential development with claims
+UW063,Retail,Low,1,Low,Online store with minimal exposure
+UW064,Technology,Medium,2,Medium,Telecommunications with moderate risk
+UW065,Hospitality,Low,0,Low,Bed and breakfast with no claims
+UW066,Transportation,High,7,High,International freight with frequent claims
+UW067,Education,Low,0,Low,Community college with clean history
+UW068,Manufacturing,Medium,3,Medium,Food processing with moderate claims
+UW069,Healthcare,High,4,High,Surgery center with elevated risk
+UW070,Professional Services,Low,1,Low,Design studio with single incident
+UW071,Construction,High,6,High,Industrial construction with multiple claims
+UW072,Retail,Medium,2,Medium,Electronics store with standard risk
+UW073,Technology,Low,0,Low,Cybersecurity firm with no claims
+UW074,Hospitality,High,5,High,Theme park with frequent incidents
+UW075,Transportation,Medium,2,Medium,Taxi service with moderate claims
+UW076,Education,Low,0,Low,Music academy with clean record
+UW077,Manufacturing,High,7,High,Steel mill with significant claims
+UW078,Healthcare,Low,1,Low,Physical therapy with single claim
+UW079,Professional Services,Medium,3,Medium,Real estate agency with moderate activity
+UW080,Construction,High,5,High,Bridge project with claims history
+UW081,Retail,Low,0,Low,Fashion boutique with no claims
+UW082,Technology,Medium,2,Medium,Gaming company with some incidents
+UW083,Hospitality,Low,1,Low,Guest house with single claim
+UW084,Transportation,High,6,High,Air cargo with frequent claims
+UW085,Education,Low,0,Low,Art school with clean history
+UW086,Manufacturing,Medium,3,Medium,Electronics assembly with moderate risk
+UW087,Healthcare,High,5,High,Diagnostic center with elevated claims
+UW088,Professional Services,Low,0,Low,Translation services with no claims
+UW089,Construction,High,8,High,Highway construction with multiple incidents
+UW090,Retail,Medium,2,Medium,Furniture store with standard exposure
+UW091,Technology,Low,1,Low,AI startup with minimal claims
+UW092,Hospitality,High,4,High,Conference center with frequent claims
+UW093,Transportation,Medium,3,Medium,Rail freight with moderate activity
+UW094,Education,Low,0,Low,Dance studio with clean record
+UW095,Manufacturing,High,6,High,Aerospace plant with significant history
+UW096,Healthcare,Low,1,Low,Optometry practice with single claim
+UW097,Professional Services,Medium,2,Medium,Human resources firm with some claims
+UW098,Construction,High,5,High,Tunnel boring with claims
+UW099,Retail,Low,0,Low,Jewelry store with no claims
+UW100,Technology,Medium,2,Medium,Robotics company with moderate risk
+UW101,Hospitality,Low,1,Low,Hostel with single incident
+UW102,Transportation,High,7,High,Pipeline operations with frequent claims
+UW103,Education,Low,0,Low,Driving school with clean history
+UW104,Manufacturing,Medium,3,Medium,Plastics production with moderate claims
+UW105,Healthcare,High,4,High,Radiology center with elevated risk
+UW106,Professional Services,Low,0,Low,Public relations with no claims
+UW107,Construction,High,6,High,Dam construction with multiple incidents
+UW108,Retail,Medium,2,Medium,Pet store with standard exposure
+UW109,Technology,Low,1,Low,Blockchain startup with minimal claims
+UW110,Hospitality,High,5,High,Cruise operations with frequent claims
+UW111,Transportation,Medium,2,Medium,Courier service with moderate activity
+UW112,Education,Low,0,Low,Tutoring center with clean record
+UW113,Manufacturing,High,7,High,Refinery with significant claims
+UW114,Healthcare,Low,1,Low,Chiropractic with single claim
+UW115,Professional Services,Medium,3,Medium,Management consulting with moderate risk
+UW116,Construction,High,5,High,Tower construction with claims
+UW117,Retail,Low,0,Low,Gift shop with no history
+UW118,Technology,Medium,2,Medium,E-commerce platform with some claims
+UW119,Hospitality,Low,1,Low,Motel with single incident
+UW120,Transportation,High,6,High,Port operations with frequent claims
+UW121,Education,Low,0,Low,Preschool with clean history
+UW122,Manufacturing,Medium,3,Medium,Packaging plant with moderate exposure
+UW123,Healthcare,High,5,High,Nursing home with elevated claims
+UW124,Professional Services,Low,0,Low,Financial advisory with no claims
+UW125,Construction,High,8,High,Stadium construction with multiple incidents
+UW126,Retail,Medium,2,Medium,Bookstore with standard risk
+UW127,Technology,Low,1,Low,SaaS provider with minimal claims
+UW128,Hospitality,High,4,High,Spa resort with frequent claims
+UW129,Transportation,Medium,3,Medium,Limousine service with moderate activity
+UW130,Education,Low,0,Low,Sports academy with clean record
+UW131,Manufacturing,High,6,High,Mining operations with significant history
+UW132,Healthcare,Low,1,Low,Mental health clinic with single claim
+UW133,Professional Services,Medium,2,Medium,Event planning with some claims
+UW134,Construction,High,5,High,Subway construction with claims
+UW135,Retail,Low,0,Low,Craft store with no incidents
+UW136,Technology,Medium,2,Medium,IoT company with moderate risk
+UW137,Hospitality,Low,1,Low,Cottage rental with single claim
+UW138,Transportation,High,7,High,Heavy equipment transport with frequent claims
+UW139,Education,Low,0,Low,Culinary school with clean history
+UW140,Manufacturing,Medium,3,Medium,Furniture production with moderate claims
+UW141,Healthcare,High,4,High,Rehabilitation center with elevated risk
+UW142,Professional Services,Low,0,Low,Graphic design with no claims
+UW143,Construction,High,6,High,Power plant construction with multiple incidents
+UW144,Retail,Medium,2,Medium,Sporting goods with standard exposure
+UW145,Technology,Low,1,Low,Data analytics with minimal claims
+UW146,Hospitality,High,5,High,Water park with frequent claims
+UW147,Transportation,Medium,2,Medium,Bicycle delivery with moderate activity
+UW148,Education,Low,0,Low,Montessori school with clean record
+UW149,Manufacturing,High,7,High,Brewery with significant claims
+UW150,Healthcare,Low,1,Low,Veterinary clinic with single claim
+UW151,Professional Services,Medium,3,Medium,Tax preparation with moderate risk
+UW152,Construction,High,5,High,Airport expansion with claims
+UW153,Retail,Low,0,Low,Antique shop with no history
+UW154,Technology,Medium,2,Medium,Fintech startup with some claims
+UW155,Hospitality,Low,1,Low,Campground with single incident
+UW156,Transportation,High,6,High,Waste management with frequent claims
+UW157,Education,Low,0,Low,Chess academy with clean history
+UW158,Manufacturing,Medium,3,Medium,Tire production with moderate exposure
+UW159,Healthcare,High,5,High,Dialysis center with elevated claims
+UW160,Professional Services,Low,0,Low,Photography studio with no claims
+UW161,Construction,High,8,High,Offshore platform with multiple incidents
+UW162,Retail,Medium,2,Medium,Garden center with standard risk
+UW163,Technology,Low,1,Low,Machine learning with minimal claims
+UW164,Hospitality,High,4,High,Event venue with frequent claims
+UW165,Transportation,Medium,3,Medium,Moving services with moderate activity
+UW166,Education,Low,0,Low,Yoga studio with clean record
+UW167,Manufacturing,High,6,High,Cement plant with significant history
+UW168,Healthcare,Low,1,Low,Acupuncture with single claim
+UW169,Professional Services,Medium,2,Medium,Business coaching with some claims
+UW170,Construction,High,5,High,Marina construction with claims
+UW171,Retail,Low,0,Low,Music store with no incidents
+UW172,Technology,Medium,2,Medium,Virtual reality with moderate risk
+UW173,Hospitality,Low,1,Low,Retreat center with single claim
+UW174,Transportation,High,7,High,Tanker operations with frequent claims
+UW175,Education,Low,0,Low,Coding bootcamp with clean history
+UW176,Manufacturing,Medium,3,Medium,Paper mill with moderate claims
+UW177,Healthcare,High,4,High,Assisted living with elevated risk
+UW178,Professional Services,Low,0,Low,Career counseling with no claims
+UW179,Construction,High,6,High,Wind farm with multiple incidents
+UW180,Retail,Medium,2,Medium,Toy store with standard exposure
+UW181,Technology,Low,1,Low,Quantum computing with minimal claims
+UW182,Hospitality,High,5,High,Amusement park with frequent claims
+UW183,Transportation,Medium,2,Medium,Rideshare service with moderate activity
+UW184,Education,Low,0,Low,Robotics club with clean record
+UW185,Manufacturing,High,7,High,Shipyard with significant claims
+UW186,Healthcare,Low,1,Low,Podiatry with single claim
+UW187,Professional Services,Medium,3,Medium,Recruitment agency with moderate risk
+UW188,Construction,High,5,High,Solar farm with claims
+UW189,Retail,Low,0,Low,Hobby shop with no history
+UW190,Technology,Medium,2,Medium,Nanotechnology with some claims
+UW191,Hospitality,Low,1,Low,Lodge with single incident
+UW192,Transportation,High,6,High,Barge operations with frequent claims
+UW193,Education,Low,0,Low,STEM center with clean history
+UW194,Manufacturing,Medium,3,Medium,Glassworks with moderate exposure
+UW195,Healthcare,High,5,High,Urgent care with elevated claims
+UW196,Professional Services,Low,0,Low,Meditation center with no claims
+UW197,Construction,High,8,High,Desalination plant with multiple incidents
+UW198,Retail,Medium,2,Medium,Cosmetics store with standard risk
+UW199,Technology,Low,1,Low,Biotech startup with minimal claims
+UW200,Hospitality,High,4,High,Marina resort with frequent claims

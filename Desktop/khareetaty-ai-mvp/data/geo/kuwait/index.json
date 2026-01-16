@@ -1,0 +1,157 @@
+{
+  "metadata": {
+    "name": "Kuwait Geographic Data",
+    "version": "1.0.0",
+    "created": "2026-01-16",
+    "crs": "WGS84",
+    "epsg": 4326,
+    "description": "Geographic boundaries for Kuwait governorates, districts, blocks, and police zones",
+    "source": "Khareetaty-AI Geo Upgrade"
+  },
+  "hierarchy": {
+    "levels": [
+      {
+        "level": 1,
+        "name": "governorate",
+        "file": "governorates.geojson",
+        "count": 6,
+        "description": "Top-level administrative divisions"
+      },
+      {
+        "level": 2,
+        "name": "district",
+        "file": "districts.geojson",
+        "count": 30,
+        "description": "District-level subdivisions within governorates"
+      },
+      {
+        "level": 3,
+        "name": "block",
+        "file": "blocks.geojson",
+        "count": 19,
+        "description": "Block-level centroids (point geometries)"
+      },
+      {
+        "level": 0,
+        "name": "police_zone",
+        "file": "police_zones.geojson",
+        "count": 6,
+        "description": "Police jurisdiction areas (aligned with governorates)"
+      }
+    ]
+  },
+  "governorates": [
+    {
+      "code": "KW-CA",
+      "name_en": "Capital",
+      "name_ar": "العاصمة",
+      "districts": ["CA-001", "CA-002", "CA-003", "CA-004", "CA-005"],
+      "police_zone": "PZ-CAPITAL"
+    },
+    {
+      "code": "KW-HA",
+      "name_en": "Hawalli",
+      "name_ar": "حولي",
+      "districts": ["HA-001", "HA-002", "HA-003", "HA-004", "HA-005"],
+      "police_zone": "PZ-HAWALLI"
+    },
+    {
+      "code": "KW-FA",
+      "name_en": "Farwaniya",
+      "name_ar": "الفروانية",
+      "districts": ["FA-001", "FA-002", "FA-003", "FA-004", "FA-005"],
+      "police_zone": "PZ-FARWANIYA"
+    },
+    {
+      "code": "KW-MU",
+      "name_en": "Mubarak Al-Kabeer",
+      "name_ar": "مبارك الكبير",
+      "districts": ["MU-001", "MU-002", "MU-003", "MU-004", "MU-005"],
+      "police_zone": "PZ-MUBARAK"
+    },
+    {
+      "code": "KW-AH",
+      "name_en": "Ahmadi",
+      "name_ar": "الأحمدي",
+      "districts": ["AH-001", "AH-002", "AH-003", "AH-004", "AH-005"],
+      "police_zone": "PZ-AHMADI"
+    },
+    {
+      "code": "KW-JA",
+      "name_en": "Jahra",
+      "name_ar": "الجهراء",
+      "districts": ["JA-001", "JA-002", "JA-003", "JA-004", "JA-005"],
+      "police_zone": "PZ-JAHRA"
+    }
+  ],
+  "police_zones": [
+    {
+      "code": "PZ-CAPITAL",
+      "name_en": "Capital Police Zone",
+      "name_ar": "منطقة شرطة العاصمة",
+      "governorate": "KW-CA",
+      "districts": ["CA-001", "CA-002", "CA-003", "CA-004", "CA-005"]
+    },
+    {
+      "code": "PZ-HAWALLI",
+      "name_en": "Hawalli Police Zone",
+      "name_ar": "منطقة شرطة حولي",
+      "governorate": "KW-HA",
+      "districts": ["HA-001", "HA-002", "HA-003", "HA-004", "HA-005"]
+    },
+    {
+      "code": "PZ-FARWANIYA",
+      "name_en": "Farwaniya Police Zone",
+      "name_ar": "منطقة شرطة الفروانية",
+      "governorate": "KW-FA",
+      "districts": ["FA-001", "FA-002", "FA-003", "FA-004", "FA-005"]
+    },
+    {
+      "code": "PZ-MUBARAK",
+      "name_en": "Mubarak Al-Kabeer Police Zone",
+      "name_ar": "منطقة شرطة مبارك الكبير",
+      "governorate": "KW-MU",
+      "districts": ["MU-001", "MU-002", "MU-003", "MU-004", "MU-005"]
+    },
+    {
+      "code": "PZ-AHMADI",
+      "name_en": "Ahmadi Police Zone",
+      "name_ar": "منطقة شرطة الأحمدي",
+      "governorate": "KW-AH",
+      "districts": ["AH-001", "AH-002", "AH-003", "AH-004", "AH-005"]
+    },
+    {
+      "code": "PZ-JAHRA",
+      "name_en": "Jahra Police Zone",
+      "name_ar": "منطقة شرطة الجهراء",
+      "governorate": "KW-JA",
+      "districts": ["JA-001", "JA-002", "JA-003", "JA-004", "JA-005"]
+    }
+  ],
+  "validation": {
+    "geometry_type": {
+      "governorates": "Polygon",
+      "districts": "Polygon",
+      "blocks": "Point",
+      "police_zones": "Polygon"
+    },
+    "required_attributes": {
+      "all": ["code", "name_en", "name_ar"],
+      "districts": ["governorate_code", "district"],
+      "blocks": ["district_code", "block_number"],
+      "police_zones": ["districts", "headquarters"]
+    }
+  },
+  "usage": {
+    "point_in_polygon": "Use Shapely to resolve lat/lon to zones",
+    "hierarchy_lookup": "Use district_code to find parent governorate",
+    "police_zone_mapping": "Use district code to find police jurisdiction"
+  },
+  "notes": [
+    "Block geometries are centroids (Point) as full polygons unavailable",
+    "Police zones align with governorate boundaries",
+    "All coordinates in WGS84 (EPSG:4326)",
+    "District boundaries are simplified for MVP",
+    "For production, replace with official PACI data"
+  ]
+}

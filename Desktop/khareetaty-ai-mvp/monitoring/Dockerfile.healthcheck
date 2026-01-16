@@ -1,0 +1,12 @@
+# Health Check Service Dockerfile
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Install dependencies
+RUN pip install --no-cache-dir requests schedule
+
+# Copy health check script
+COPY healthcheck.py .
+
+CMD ["python", "healthcheck.py"]

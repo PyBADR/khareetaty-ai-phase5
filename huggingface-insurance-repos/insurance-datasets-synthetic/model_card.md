@@ -24,22 +24,23 @@
 
 ## Dataset Composition
 
-### Claims Data
-- **Size:** 25 synthetic records
-- **Features:** 10 columns including claim amounts, types, and settlement info
-- **Coverage:** Auto and Home insurance claims
-- **Time Period:** 2024 synthetic data
+### Fraud Cases Synthetic
+- **Size:** 250 synthetic records
+- **Features:** 6 columns including policy type, risk profiles, and fraud labels
+- **Coverage:** Fraud detection training data for insurance claims triage
+- **File:** `data/fraud_cases_synthetic.csv`
 
-### Policies Data
-- **Size:** 25 synthetic records
-- **Features:** 10 columns including premiums, coverage, and risk scores
-- **Coverage:** Auto and Home insurance policies
-- **Time Period:** 2023-2026 synthetic data
+### Claims Lifecycle IFRS Synthetic
+- **Size:** 251 synthetic records
+- **Features:** 6 columns including claim stages, severity, IBNR flags, and accrual factors
+- **Coverage:** IFRS 17 compliant claims lifecycle and accrual estimation data
+- **File:** `data/claims_lifecycle_ifrs_synthetic.csv`
 
-### Fraud Indicators
-- **Size:** 15 synthetic records
-- **Features:** 7 columns including risk levels and verification status
-- **Coverage:** Various fraud indicator types
+### Policy Clauses Snippets
+- **Size:** 12 fabricated paragraphs
+- **Content:** Synthetic policy clause text for compliance and RAG testing
+- **Coverage:** Various insurance policy topics (no real-world product text)
+- **File:** `data/policy_clauses_snippets.txt`
 
 ## Data Generation Process
 
@@ -53,7 +54,7 @@ All data in this repository is **100% synthetically generated** using the follow
 
 ## Limitations
 
-- **Small Sample Size:** Only 25 records per main dataset (for demonstration)
+- **Sample Size:** 200+ records per CSV dataset (for demonstration and testing)
 - **Simplified Schema:** Real insurance data has more complex relationships
 - **No Temporal Patterns:** Does not model seasonal or trend effects
 - **Limited Geography:** No geographic or regional variations
@@ -110,6 +111,6 @@ For questions or issues, please open an issue in the repository.
 
 ### Version 1.0 (January 2026)
 - Initial release
-- 3 synthetic datasets (claims, policies, fraud indicators)
+- 3 synthetic datasets (fraud cases, IFRS claims lifecycle, policy clauses)
 - Interactive Gradio explorer app
-- Complete documentation
+- Complete documentation with mandatory disclaimers

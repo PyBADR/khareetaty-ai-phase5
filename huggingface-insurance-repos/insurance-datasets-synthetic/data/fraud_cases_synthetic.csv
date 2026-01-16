@@ -1,0 +1,236 @@
+policy_type,claimant_profile_risk,incident_pattern,document_consistency_score,anomaly_score,synthetic_flag_label
+Auto Theft,Low Risk,High Value,0.471,0.133,Under Review
+Auto Theft,Low Risk,Holiday Filing,0.322,0.089,Under Review
+Home Water Damage,Low Risk,Inconsistent Details,0.801,0.666,Under Review
+Liability,Medium Risk,Rapid Succession,0.712,0.769,Flagged
+Auto Collision,Medium Risk,Holiday Filing,0.538,0.148,Clean
+Property Damage,Low Risk,Suspicious Timing,0.566,0.341,Under Review
+Home Burglary,High Risk,Suspicious Timing,0.948,0.092,Clean
+Auto Collision,Medium Risk,Inconsistent Details,0.845,0.198,Clean
+Home Fire,Very High Risk,Normal,0.976,0.792,Flagged
+Home Water Damage,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Collision,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Home Burglary,High Risk,Suspicious Timing,0.725,0.276,Clean
+Home Fire,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Home Burglary,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Auto Collision,Low Risk,Rapid Succession,0.894,0.152,Clean
+Home Water Damage,Medium Risk,Normal,0.302,0.058,Clean
+Home Fire,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Auto Collision,High Risk,Rapid Succession,0.322,0.601,Under Review
+Home Burglary,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Home Fire,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Home Burglary,Medium Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Theft,Low Risk,Suspicious Timing,0.87,0.272,Clean
+Home Fire,High Risk,Suspicious Timing,0.725,0.276,Clean
+Liability,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Property Damage,Low Risk,Rapid Succession,0.894,0.152,Clean
+Home Water Damage,Medium Risk,Normal,0.302,0.058,Clean
+Workers Comp,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Auto Theft,High Risk,Rapid Succession,0.322,0.601,Under Review
+Home Fire,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Home Burglary,Very High Risk,Normal,0.976,0.792,Flagged
+Property Damage,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Theft,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Home Fire,High Risk,Suspicious Timing,0.725,0.276,Clean
+Liability,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Home Water Damage,Low Risk,Rapid Succession,0.894,0.152,Clean
+Workers Comp,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Property Damage,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Home Burglary,Low Risk,High Value,0.471,0.133,Under Review
+Auto Theft,Low Risk,Holiday Filing,0.322,0.089,Under Review
+Home Water Damage,Low Risk,Inconsistent Details,0.801,0.666,Under Review
+Liability,Medium Risk,Rapid Succession,0.712,0.769,Flagged
+Auto Collision,Medium Risk,Holiday Filing,0.538,0.148,Clean
+Property Damage,Low Risk,Suspicious Timing,0.566,0.341,Under Review
+Home Fire,High Risk,Suspicious Timing,0.948,0.092,Clean
+Auto Collision,Medium Risk,Inconsistent Details,0.845,0.198,Clean
+Workers Comp,Very High Risk,Normal,0.976,0.792,Flagged
+Home Water Damage,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Theft,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Home Fire,High Risk,Suspicious Timing,0.725,0.276,Clean
+Liability,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Property Damage,Low Risk,Rapid Succession,0.894,0.152,Clean
+Home Water Damage,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Home Burglary,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Property Damage,Very High Risk,Normal,0.976,0.792,Flagged
+Home Water Damage,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Theft,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Home Fire,High Risk,Suspicious Timing,0.725,0.276,Clean
+Liability,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Home Burglary,Low Risk,Rapid Succession,0.894,0.152,Clean
+Workers Comp,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Property Damage,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Home Water Damage,Low Risk,High Value,0.471,0.133,Under Review
+Auto Theft,Low Risk,Holiday Filing,0.322,0.089,Under Review
+Home Fire,Low Risk,Inconsistent Details,0.801,0.666,Under Review
+Liability,Medium Risk,Rapid Succession,0.712,0.769,Flagged
+Auto Collision,Medium Risk,Holiday Filing,0.538,0.148,Clean
+Home Burglary,Low Risk,Suspicious Timing,0.566,0.341,Under Review
+Property Damage,High Risk,Suspicious Timing,0.948,0.092,Clean
+Auto Collision,Medium Risk,Inconsistent Details,0.845,0.198,Clean
+Workers Comp,Very High Risk,Normal,0.976,0.792,Flagged
+Home Water Damage,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Theft,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Home Fire,High Risk,Suspicious Timing,0.725,0.276,Clean
+Liability,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Home Burglary,Low Risk,Rapid Succession,0.894,0.152,Clean
+Property Damage,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Workers Comp,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Home Water Damage,Very High Risk,Normal,0.976,0.792,Flagged
+Auto Theft,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Home Fire,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Liability,High Risk,Suspicious Timing,0.725,0.276,Clean
+Auto Collision,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Home Burglary,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Property Damage,Low Risk,Rapid Succession,0.894,0.152,Clean
+Workers Comp,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Home Water Damage,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Liability,Low Risk,High Value,0.471,0.133,Under Review
+Auto Theft,Low Risk,Holiday Filing,0.322,0.089,Under Review
+Home Fire,Low Risk,Inconsistent Details,0.801,0.666,Under Review
+Property Damage,Medium Risk,Rapid Succession,0.712,0.769,Flagged
+Auto Collision,Medium Risk,Holiday Filing,0.538,0.148,Clean
+Home Burglary,Low Risk,Suspicious Timing,0.566,0.341,Under Review
+Workers Comp,High Risk,Suspicious Timing,0.948,0.092,Clean
+Auto Collision,Medium Risk,Inconsistent Details,0.845,0.198,Clean
+Home Water Damage,Very High Risk,Normal,0.976,0.792,Flagged
+Auto Theft,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Home Fire,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Liability,High Risk,Suspicious Timing,0.725,0.276,Clean
+Auto Collision,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Home Burglary,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Property Damage,Low Risk,Rapid Succession,0.894,0.152,Clean
+Workers Comp,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Home Water Damage,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Liability,Very High Risk,Normal,0.976,0.792,Flagged
+Property Damage,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Theft,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Home Fire,High Risk,Suspicious Timing,0.725,0.276,Clean
+Workers Comp,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Home Burglary,Low Risk,Rapid Succession,0.894,0.152,Clean
+Home Water Damage,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Property Damage,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Liability,Low Risk,High Value,0.471,0.133,Under Review
+Auto Theft,Low Risk,Holiday Filing,0.322,0.089,Under Review
+Home Fire,Low Risk,Inconsistent Details,0.801,0.666,Under Review
+Workers Comp,Medium Risk,Rapid Succession,0.712,0.769,Flagged
+Auto Collision,Medium Risk,Holiday Filing,0.538,0.148,Clean
+Home Burglary,Low Risk,Suspicious Timing,0.566,0.341,Under Review
+Property Damage,High Risk,Suspicious Timing,0.948,0.092,Clean
+Auto Collision,Medium Risk,Inconsistent Details,0.845,0.198,Clean
+Home Water Damage,Very High Risk,Normal,0.976,0.792,Flagged
+Auto Theft,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Home Fire,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Liability,High Risk,Suspicious Timing,0.725,0.276,Clean
+Workers Comp,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Home Burglary,Low Risk,Rapid Succession,0.894,0.152,Clean
+Property Damage,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Home Water Damage,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Liability,Very High Risk,Normal,0.976,0.792,Flagged
+Workers Comp,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Theft,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Home Fire,High Risk,Suspicious Timing,0.725,0.276,Clean
+Property Damage,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Home Burglary,Low Risk,Rapid Succession,0.894,0.152,Clean
+Home Water Damage,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Liability,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Workers Comp,Low Risk,High Value,0.471,0.133,Under Review
+Auto Theft,Low Risk,Holiday Filing,0.322,0.089,Under Review
+Home Fire,Low Risk,Inconsistent Details,0.801,0.666,Under Review
+Property Damage,Medium Risk,Rapid Succession,0.712,0.769,Flagged
+Auto Collision,Medium Risk,Holiday Filing,0.538,0.148,Clean
+Home Burglary,Low Risk,Suspicious Timing,0.566,0.341,Under Review
+Home Water Damage,High Risk,Suspicious Timing,0.948,0.092,Clean
+Auto Collision,Medium Risk,Inconsistent Details,0.845,0.198,Clean
+Liability,Very High Risk,Normal,0.976,0.792,Flagged
+Auto Theft,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Home Fire,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Workers Comp,High Risk,Suspicious Timing,0.725,0.276,Clean
+Property Damage,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Home Burglary,Low Risk,Rapid Succession,0.894,0.152,Clean
+Home Water Damage,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Liability,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Workers Comp,Very High Risk,Normal,0.976,0.792,Flagged
+Property Damage,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Theft,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Home Fire,High Risk,Suspicious Timing,0.725,0.276,Clean
+Home Burglary,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Home Water Damage,Low Risk,Rapid Succession,0.894,0.152,Clean
+Liability,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Property Damage,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Workers Comp,Low Risk,High Value,0.471,0.133,Under Review
+Auto Theft,Low Risk,Holiday Filing,0.322,0.089,Under Review
+Home Fire,Low Risk,Inconsistent Details,0.801,0.666,Under Review
+Home Burglary,Medium Risk,Rapid Succession,0.712,0.769,Flagged
+Auto Collision,Medium Risk,Holiday Filing,0.538,0.148,Clean
+Liability,Low Risk,Suspicious Timing,0.566,0.341,Under Review
+Property Damage,High Risk,Suspicious Timing,0.948,0.092,Clean
+Auto Collision,Medium Risk,Inconsistent Details,0.845,0.198,Clean
+Home Water Damage,Very High Risk,Normal,0.976,0.792,Flagged
+Auto Theft,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Home Fire,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Workers Comp,High Risk,Suspicious Timing,0.725,0.276,Clean
+Home Burglary,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Liability,Low Risk,Rapid Succession,0.894,0.152,Clean
+Property Damage,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Home Water Damage,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean
+Workers Comp,Very High Risk,Normal,0.976,0.792,Flagged
+Liability,Low Risk,Rapid Succession,0.832,0.779,Flagged
+Auto Theft,Medium Risk,Suspicious Timing,0.87,0.272,Clean
+Home Fire,High Risk,Suspicious Timing,0.725,0.276,Clean
+Property Damage,Medium Risk,Inconsistent Details,0.959,0.801,Flagged
+Auto Collision,High Risk,Multiple Claims,0.439,0.959,Confirmed Fraud
+Home Burglary,Low Risk,Rapid Succession,0.894,0.152,Clean
+Home Water Damage,Medium Risk,Normal,0.302,0.058,Clean
+Auto Theft,Low Risk,Suspicious Timing,0.663,0.866,Confirmed Fraud
+Home Fire,High Risk,Rapid Succession,0.322,0.601,Under Review
+Liability,Medium Risk,Inconsistent Details,0.708,0.708,Flagged
+Auto Collision,Medium Risk,Rapid Succession,0.545,0.022,Clean

@@ -1,244 +1,254 @@
 ---
-title: GCC Insurance AI Hub
-emoji: 🏢
-colorFrom: indigo
-colorTo: blue
-sdk: gradio
-sdk_version: 4.44.0
-app_file: app.py
-pinned: false
-license: mit
+title: GCC Insurance Intelligence Lab Hub
+emoji: 🏭
+colorFrom: blue
+colorTo: purple
+sdk: static
+pinned: true
 ---
 
-# GCC Insurance AI Hub
+# 🏭 GCC Insurance Intelligence Lab
 
-## Overview
+## Available Insurance AI Spaces
 
-The **GCC Insurance AI Hub** is a central access point for a collection of insurance AI demonstration tools and datasets. This hub provides links and documentation for all related repositories.
+- [Claims Journey Simulator](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/claims-journey-simulator) - Claims Journey Simulator
+- [Doc Rag Compliance Assistant](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/doc-rag-compliance-assistant) - Doc Rag Compliance Assistant
+- [Fnol Fast Track Screener](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/fnol-fast-track-screener) - Fnol Fast Track Screener
+- [Fraud Audit Log Engine](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/fraud-audit-log-engine) - Fraud Audit Log Engine
+- [Fraud Triage Sandbox](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/fraud-triage-sandbox) - Fraud Triage Sandbox
+- [Gcc Insurance Ai Hub](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/gcc-insurance-ai-hub) - Gcc Insurance Ai Hub
+- [Ifrs Claim Accrual Estimator](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/ifrs-claim-accrual-estimator) - Ifrs Claim Accrual Estimator
+- [Insurance Datasets Synthetic](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/insurance-datasets-synthetic) - Insurance Datasets Synthetic
+- [Premium Lapse Monitor](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/premium-lapse-monitor) - Premium Lapse Monitor
+- [Reinsurance Pricing Mock](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/reinsurance-pricing-mock) - Reinsurance Pricing Mock
+- [Test Use Case](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/test-use-case) - Test Use Case
+- [Underwriting Score Sandbox](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/underwriting-score-sandbox) - Underwriting Score Sandbox
+- [Underwriting Score Sandbox V2](https://huggingface.co/spaces/gcc-insurance-intelligence-lab/underwriting-score-sandbox-v2) - Underwriting Score Sandbox V2
 
----
 
-## Disclaimer
+**Welcome to the Insurance AI Factory!**
 
-This project models generic insurance concepts common in GCC markets. All datasets are synthetic and made-up for demonstration and research purposes. No proprietary pricing, underwriting rules, policy wording, or confidential logic was used. Outputs are illustrative only and require human review. Not to be used for any pricing, reserving, claim approval, or policy issuance.
+This hub provides access to all insurance AI applications, models, and datasets developed by the GCC Insurance Intelligence Lab.
 
-## Human-In-The-Loop
-
-No AI component here issues approvals, denials, or financial outcomes. All outputs require human verification and decision-making.
-
----
-
-## Available Repositories
-
-### 1. Insurance Datasets (Synthetic)
-
-**Purpose**: Synthetic insurance datasets for testing and development
-
-**Contents**:
-- Claims data (amounts, dates, types)
-- Policy information
-- Fraud indicators
-
-**Features**:
-- Interactive data viewer
-- Download capabilities
-- Multiple dataset formats
-
-**Use Cases**:
-- Testing applications
-- Training and education
-- Prototyping analytics
+⚠️ **All content is for educational and research purposes only. Built with 100% synthetic data.**
 
 ---
 
-### 2. Fraud Triage Sandbox
+## Available Datasets
 
-**Purpose**: Rule-based fraud detection demonstration
+- Insurance Datasets Synthetic - insurance-datasets-synthetic
 
-**Features**:
-- Interactive claim input
-- Risk scoring system
-- Triage recommendations
-- Configurable thresholds
 
-**Use Cases**:
-- Understanding fraud detection
-- Testing triage workflows
-- Training claims staff
+## Available Models
+
+- Fraud Signal Classifier V1 - fraud-signal-classifier-v1
+
+
+## 🚀 Available Spaces
+
+<div style='display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin: 20px 0;'>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/claims-journey-simulator" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">📝 Claims Journey Simulator</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">title: Claims Journey Simulator</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/doc-rag-compliance-assistant" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">📊 Doc Rag Compliance Assistant</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">title: Document RAG Compliance Assistant</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/fnol-fast-track-screener" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">📊 Fnol Fast Track Screener</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">title: FNOL Fast Track Screener</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/fraud-audit-log-engine" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">🔍 Fraud Audit Log Engine</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">title: Fraud Audit Log Engine</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/fraud-triage-sandbox" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">🔍 Fraud Triage Sandbox</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">title: Fraud Triage Sandbox</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/ifrs-claim-accrual-estimator" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">📝 Ifrs Claim Accrual Estimator</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">title: IFRS Claim Accrual Estimator</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/insurance-datasets-synthetic" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">📊 Insurance Datasets Synthetic</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">title: Insurance Datasets Synthetic</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             📊 Dataset
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/premium-lapse-monitor" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">💰 Premium Lapse Monitor</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">Premium Lapse Monitor</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+            🤖 Model 📊 Dataset
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/reinsurance-pricing-mock" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">📊 Reinsurance Pricing Mock</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">title: Reinsurance Pricing Mock</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/test-use-case" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">📊 Test Use Case</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">Test use case for validation</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+            🤖 Model 📊 Dataset
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/underwriting-score-sandbox" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">📊 Underwriting Score Sandbox</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">**Educational Underwriting Risk Assessment System**</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             
+        </div>
+    </div>
+</a>
+
+<a href="https://huggingface.co/spaces/gcc-insurance-intelligence-lab/underwriting-score-sandbox-v2" target="_blank" style="text-decoration: none;">
+    <div style="border: 2px solid #4CAF50; border-radius: 10px; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; transition: transform 0.2s;">
+        <h3 style="margin: 0 0 10px 0; color: white;">📊 Underwriting Score Sandbox V2</h3>
+        <p style="margin: 0; font-size: 14px; opacity: 0.9;">title: Underwriting Score Sandbox</p>
+        <div style="margin-top: 10px; font-size: 12px; opacity: 0.8;">
+             
+        </div>
+    </div>
+</a>
+
+</div>
+
+
 
 ---
 
-### 3. IFRS 17 Claim Accrual Estimator
 
-**Purpose**: Actuarial reserve estimation under IFRS 17
-
-**Features**:
-- Chain ladder method
-- Risk adjustment
-- Present value discounting
-- Complete accrual breakdown
-
-**Use Cases**:
-- Learning IFRS 17 concepts
-- Understanding actuarial methods
-- Reserve estimation demos
 
 ---
 
-### 4. Document RAG Compliance Assistant
 
-**Purpose**: Retrieval-Augmented Generation for compliance Q&A
-
-**Features**:
-- Document retrieval
-- Answer generation
-- Source transparency
-- Multiple compliance topics
-
-**Use Cases**:
-- Compliance Q&A
-- Policy guidance
-- Knowledge management
 
 ---
 
-## Technology Stack
+## 🛡️ Governance & Safety
 
-- **Framework**: Gradio 4.44.0
-- **Language**: Python 3.9+
-- **Deployment**: Hugging Face Spaces
-- **Libraries**: pandas, numpy (in individual repos)
+### Core Principles
 
-## Repository Structure
+✅ **Synthetic Data Only**: All models and datasets use 100% synthetic data
+✅ **Human-in-Loop**: All predictions require human review
+✅ **Educational Purpose**: For learning and demonstration only
+❌ **No Production Authority**: Not for actual underwriting, pricing, or payout decisions
+❌ **No PII**: No personally identifiable information
+❌ **No Confidential Data**: No real business or customer data
 
+### Disclaimers
+
+**IMPORTANT**: These applications and models:
+- Are NOT validated for production use
+- Have NO underwriting authority
+- Have NO pricing authority  
+- Have NO payout decision authority
+- Must NOT be used with real customer data
+- Require qualified professional oversight
+
+---
+
+## 🛠️ Platform Automation
+
+This lab features automated:
+- ✅ Repository generation
+- ✅ CI/CD deployment
+- ✅ Model packaging and versioning
+- ✅ Dataset management
+- ✅ Hub synchronization
+- ✅ Code quality enforcement
+- ✅ Governance validation
+
+### Quick Start
+
+To add a new use case:
+```bash
+/add-usecase <use-case-name>
 ```
-gcc-insurance-ai-hub/
-├── app.py              # Main hub interface
-├── requirements.txt    # Python dependencies
-├── README.md          # This file
-└── model_card.md      # Detailed documentation
-```
-
-## Quick Start
-
-1. Visit this Hugging Face Space
-2. Browse available repositories
-3. Click on repository links to access demos
-4. Explore interactive features
-
-## Important Disclaimers
-
-⚠️ **All repositories in this hub:**
-
-- Use **100% synthetic data**
-- Are for **demonstration purposes only**
-- Provide **advisory outputs only**
-- Should **not be used for production**
-- Require **professional guidance for real implementations**
-
-### What This Hub Does NOT Include
-
-- Real insurer names or policies
-- Actual customer data
-- Proprietary actuarial formulas
-- KYC or sensitive fields
-- Pricing or quoting functionality
-- Production-ready code
-
-## Target Audience
-
-### Developers
-- Test insurance applications
-- Prototype workflows
-- Learn implementation patterns
-
-### Business Analysts
-- Understand insurance operations
-- Explore AI applications
-- Analyze processes
-
-### Students & Educators
-- Study insurance concepts
-- Learn AI/ML in insurance
-- Practice with realistic scenarios
-
-## Use Case Examples
-
-**Testing & Development**:
-- Use synthetic datasets to test applications
-- Prototype fraud detection workflows
-- Validate calculation logic
-
-**Training & Education**:
-- Teach insurance operations
-- Demonstrate AI capabilities
-- Explain regulatory concepts
-
-**Prototyping & Demos**:
-- Showcase potential solutions
-- Test user interfaces
-- Validate business logic
-
-## Compliance & Safety
-
-### Data Privacy
-- No real personal information
-- All data is synthetic
-- No GDPR/CCPA concerns
-
-### Security
-- No sensitive data
-- No authentication required
-- Public demonstration only
-
-### Ethics
-- Fair and unbiased examples
-- Transparent limitations
-- Clear disclaimers
-
-## Documentation
-
-Each repository includes:
-
-- **README.md**: Overview and usage
-- **model_card.md**: Technical details
-- **requirements.txt**: Dependencies
-- **Utility files**: Supporting code
-
-## Repository Links
-
-Update these links with your actual Hugging Face Space URLs:
-
-- [Insurance Datasets (Synthetic)](https://huggingface.co/spaces/YOUR_USERNAME/insurance-datasets-synthetic)
-- [Fraud Triage Sandbox](https://huggingface.co/spaces/YOUR_USERNAME/fraud-triage-sandbox)
-- [IFRS 17 Accrual Estimator](https://huggingface.co/spaces/YOUR_USERNAME/ifrs-claim-accrual-estimator)
-- [RAG Compliance Assistant](https://huggingface.co/spaces/YOUR_USERNAME/doc-rag-compliance-assistant)
-
-## Future Enhancements
-
-Potential additions:
-- Additional datasets
-- More calculators
-- Advanced ML models
-- Integration examples
-- API documentation
-
-## Version History
-
-- **v1.0.0** (January 2026): Initial release with 4 repositories
-
-## License
-
-MIT License
 
 ---
 
-**Built by Qoder for Vercept**
+## 📚 Documentation
 
-## Contact
-
-For questions or feedback, contact Vercept.
+- [Automation Playbook](./lab-automation-playbook.md)
+- [Developer Guide](./developer-guide.md)
+- [Governance Rules](./governance-rules.md)
+- [Add Use Case Template](./add-usecase-template.md)
 
 ---
 
-**For educational and demonstration purposes only**
+## 📊 Statistics
+
+- **Total Spaces**: 12
+- **Total Models**: 0
+- **Total Datasets**: 0
+- **Last Updated**: 2026-01-08 14:21:35
+
+---
+
+## 👥 Contact
+
+For questions, issues, or contributions, please refer to the individual repository documentation.
+
+---
+
+**Status**: 🟢 Production Ready - Insurance AI Factory Mode Activated
+
+*Generated automatically by Hub Orchestrator*

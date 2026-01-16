@@ -1,0 +1,89 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgis/postgis:15-3.3
+    container_name: khareetaty-postgres
+    environment:
+      - POSTGRES_DB=khareetaty_ai
+      - POSTGRES_USER=bader
+      - POSTGRES_PASSWORD=secret123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/db/migrations.sql:/docker-entrypoint-initdb.d/01-migrations.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bader -d khareetaty_ai"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: khareetaty-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: khareetaty-backend
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=khareetaty_ai
+      - DB_USER=bader
+      - DB_PASSWORD=secret123
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - JWT_SECRET=khareetaty-development-secret-key
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  dashboard:
+    image: python:3.11-slim
+    container_name: khareetaty-dashboard
+    working_dir: /app
+    command: >
+      bash -c "
+        pip install streamlit pandas plotly psycopg2-binary &&
+        streamlit run src/dashboard.py --server.port=8501 --server.address=0.0.0.0
+      "
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=khareetaty_ai
+      - DB_USER=bader
+      - DB_PASSWORD=secret123
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      backend:
+        condition: service_healthy
+
+volumes:
+  postgres_data:

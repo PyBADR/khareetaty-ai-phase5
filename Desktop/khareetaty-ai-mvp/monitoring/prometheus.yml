@@ -1,0 +1,60 @@
+# Prometheus Configuration for Khareetaty AI
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+  external_labels:
+    cluster: 'khareetaty-production'
+    environment: 'production'
+
+# Alerting configuration
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: []
+
+# Rule files
+rule_files:
+  # - "alerts.yml"
+
+# Scrape configurations
+scrape_configs:
+  # Backend instances
+  - job_name: 'backend'
+    static_configs:
+      - targets: 
+          - 'backend-1:8000'
+          - 'backend-2:8000'
+          - 'backend-3:8000'
+        labels:
+          service: 'khareetaty-backend'
+
+  # PostgreSQL
+  - job_name: 'postgres'
+    static_configs:
+      - targets:
+          - 'postgres-primary:5432'
+          - 'postgres-replica:5432'
+        labels:
+          service: 'postgres'
+
+  # Redis
+  - job_name: 'redis'
+    static_configs:
+      - targets:
+          - 'redis-primary:6379'
+          - 'redis-replica:6379'
+        labels:
+          service: 'redis'
+
+  # Nginx
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx:80']
+        labels:
+          service: 'nginx-lb'
+
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']

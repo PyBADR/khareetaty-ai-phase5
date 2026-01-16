@@ -1,317 +1,157 @@
 """
 GCC Insurance AI Hub
-Central hub linking all insurance AI demonstration repositories.
+Central landing page linking to insurance AI demonstration spaces.
 """
 
 import gradio as gr
 
-# Repository information
-REPOS = {
-    "insurance-datasets-synthetic": {
-        "title": "📊 Insurance Datasets (Synthetic)",
-        "description": "Synthetic insurance datasets for claims, policies, and fraud indicators",
-        "url": "https://huggingface.co/spaces/YOUR_USERNAME/insurance-datasets-synthetic",
-        "features": [
-            "3 synthetic CSV datasets",
-            "Claims data with amounts and dates",
-            "Policy information",
-            "Fraud indicators",
-            "Interactive data viewer",
-            "Download capabilities"
-        ],
-        "use_cases": [
-            "Testing and development",
-            "Training and education",
-            "Prototyping analytics",
-            "Demo applications"
-        ]
-    },
-    "fraud-triage-sandbox": {
-        "title": "🔍 Fraud Triage Sandbox",
-        "description": "Rule-based fraud detection and claim triage demonstration",
-        "url": "https://huggingface.co/spaces/YOUR_USERNAME/fraud-triage-sandbox",
-        "features": [
-            "Interactive claim input",
-            "Rule-based fraud detection",
-            "Risk scoring system",
-            "Triage recommendations",
-            "Configurable thresholds",
-            "Detailed explanations"
-        ],
-        "use_cases": [
-            "Understanding fraud detection",
-            "Testing triage logic",
-            "Training claims adjusters",
-            "Workflow prototyping"
-        ]
-    },
-    "ifrs-claim-accrual-estimator": {
-        "title": "📈 IFRS 17 Claim Accrual Estimator",
-        "description": "Actuarial reserve estimation under IFRS 17 principles",
-        "url": "https://huggingface.co/spaces/YOUR_USERNAME/ifrs-claim-accrual-estimator",
-        "features": [
-            "Chain ladder method",
-            "Risk adjustment calculation",
-            "Present value discounting",
-            "Complete accrual breakdown",
-            "Multiple claim types",
-            "Interactive parameters"
-        ],
-        "use_cases": [
-            "Learning IFRS 17 concepts",
-            "Understanding actuarial methods",
-            "Reserve estimation demos",
-            "Accounting training"
-        ]
-    },
-    "doc-rag-compliance-assistant": {
-        "title": "📚 Document RAG Compliance Assistant",
-        "description": "Retrieval-Augmented Generation for compliance Q&A",
-        "url": "https://huggingface.co/spaces/YOUR_USERNAME/doc-rag-compliance-assistant",
-        "features": [
-            "Document retrieval",
-            "Answer generation",
-            "Source transparency",
-            "Multiple compliance topics",
-            "Natural language queries",
-            "Relevance scoring"
-        ],
-        "use_cases": [
-            "Compliance Q&A",
-            "Policy guidance",
-            "Training and education",
-            "Knowledge management"
-        ]
-    }
-}
-
 # Create Gradio interface
 with gr.Blocks(title="GCC Insurance AI Hub", theme=gr.themes.Soft()) as demo:
     gr.Markdown("""
-    # 🏢 GCC Insurance AI Hub
+    # 🏢 GCC Insurance Intelligence Lab
     
-    Welcome to the **GCC Insurance AI Demonstration Hub** - your central access point for insurance AI tools and datasets.
+    ## ⚠️ CRITICAL DISCLAIMER
     
-    ## 🎯 Purpose
+    **All tools in this hub are for EDUCATIONAL and DEMONSTRATION purposes ONLY.**
     
-    This hub provides access to a collection of **demonstration tools** for insurance operations, including:
-    - Synthetic datasets for testing
-    - Fraud detection systems
-    - Actuarial calculations
-    - Compliance assistance
+    - **NOT for production use** in any insurance operations
+    - **NOT a substitute** for qualified professionals (actuaries, compliance, legal)
+    - **All data is 100% synthetic** - no real policies, claims, or customer information
+    - **All outputs are advisory only** and require human expert validation
+    - **No liability** for decisions based on these tools
     
-    ⚠️ **Important**: All tools use **synthetic data** and are for **demonstration purposes only**.
+    ### Compliance & Safety:
+    
+    - **No real insurer names** or product information
+    - **No confidential rulebooks** or proprietary logic
+    - **No pricing or reserving** for actual business use
+    - **No KYC or personal identity** signals
+    - **Human-in-the-loop enforced** for all outputs
     
     ---
+    
+    ## 📊 Available Spaces
+    
+    This hub provides access to four demonstration spaces:
     """)
     
-    # Repository 1: Datasets
-    with gr.Accordion("📊 Insurance Datasets (Synthetic)", open=True):
-        gr.Markdown(f"""
-        ### {REPOS['insurance-datasets-synthetic']['title']}
-        
-        {REPOS['insurance-datasets-synthetic']['description']}
-        
-        **Features:**
-        {chr(10).join(['- ' + f for f in REPOS['insurance-datasets-synthetic']['features']])}
-        
-        **Use Cases:**
-        {chr(10).join(['- ' + u for u in REPOS['insurance-datasets-synthetic']['use_cases']])}
-        
-        **Access:** [Open Repository]({REPOS['insurance-datasets-synthetic']['url']})
-        """)
+    # Space 1: Fraud Triage Sandbox
+    with gr.Row():
+        with gr.Column():
+            gr.Markdown("""
+            ### 🔍 Fraud Triage Sandbox
+            
+            **Rule-based fraud detection system** for insurance claims triage.
+            
+            - Inputs: claim type, sector, evidence %, behavior pattern, claim history
+            - Outputs: Low/Medium/High fraud likelihood with explanations
+            - Includes uncertainty scoring and human review warnings
+            
+            **Use Case**: Educational demonstration of fraud detection logic
+            
+            [Open Fraud Triage Sandbox](https://huggingface.co/spaces/YOUR_USERNAME/fraud-triage-sandbox)
+            """)
     
-    # Repository 2: Fraud Triage
-    with gr.Accordion("🔍 Fraud Triage Sandbox", open=False):
-        gr.Markdown(f"""
-        ### {REPOS['fraud-triage-sandbox']['title']}
-        
-        {REPOS['fraud-triage-sandbox']['description']}
-        
-        **Features:**
-        {chr(10).join(['- ' + f for f in REPOS['fraud-triage-sandbox']['features']])}
-        
-        **Use Cases:**
-        {chr(10).join(['- ' + u for u in REPOS['fraud-triage-sandbox']['use_cases']])}
-        
-        **Access:** [Open Repository]({REPOS['fraud-triage-sandbox']['url']})
-        """)
+    # Space 2: IFRS Claim Accrual Estimator
+    with gr.Row():
+        with gr.Column():
+            gr.Markdown("""
+            ### 💰 IFRS Claim Accrual Estimator
+            
+            **Symbolic accrual bracket assignment** for insurance claims.
+            
+            - Inputs: claim stage, severity bracket, investigation duration, IBNR flag
+            - Outputs: Accrual Band A-E (symbolic only, no monetary amounts)
+            - Includes mandatory "consult finance" warnings
+            
+            **Use Case**: Educational demonstration of accrual estimation concepts
+            
+            [Open IFRS Accrual Estimator](https://huggingface.co/spaces/YOUR_USERNAME/ifrs-claim-accrual-estimator)
+            """)
     
-    # Repository 3: IFRS Estimator
-    with gr.Accordion("📈 IFRS 17 Claim Accrual Estimator", open=False):
-        gr.Markdown(f"""
-        ### {REPOS['ifrs-claim-accrual-estimator']['title']}
-        
-        {REPOS['ifrs-claim-accrual-estimator']['description']}
-        
-        **Features:**
-        {chr(10).join(['- ' + f for f in REPOS['ifrs-claim-accrual-estimator']['features']])}
-        
-        **Use Cases:**
-        {chr(10).join(['- ' + u for u in REPOS['ifrs-claim-accrual-estimator']['use_cases']])}
-        
-        **Access:** [Open Repository]({REPOS['ifrs-claim-accrual-estimator']['url']})
-        """)
+    # Space 3: Document RAG Compliance Assistant
+    with gr.Row():
+        with gr.Column():
+            gr.Markdown("""
+            ### 📚 Document RAG Compliance Assistant
+            
+            **Retrieval-Augmented Generation** for policy compliance questions.
+            
+            - Loads synthetic policy clauses from text file
+            - Uses sentence transformers or TF-IDF for semantic search
+            - Returns most relevant clause with similarity score
+            - Includes out-of-scope guardrails and human review warnings
+            
+            **Use Case**: Educational demonstration of RAG systems for compliance
+            
+            [Open RAG Compliance Assistant](https://huggingface.co/spaces/YOUR_USERNAME/doc-rag-compliance-assistant)
+            """)
     
-    # Repository 4: RAG Assistant
-    with gr.Accordion("📚 Document RAG Compliance Assistant", open=False):
-        gr.Markdown(f"""
-        ### {REPOS['doc-rag-compliance-assistant']['title']}
-        
-        {REPOS['doc-rag-compliance-assistant']['description']}
-        
-        **Features:**
-        {chr(10).join(['- ' + f for f in REPOS['doc-rag-compliance-assistant']['features']])}
-        
-        **Use Cases:**
-        {chr(10).join(['- ' + u for u in REPOS['doc-rag-compliance-assistant']['use_cases']])}
-        
-        **Access:** [Open Repository]({REPOS['doc-rag-compliance-assistant']['url']})
-        """)
+    # Space 4: Insurance Datasets (Synthetic)
+    with gr.Row():
+        with gr.Column():
+            gr.Markdown("""
+            ### 📈 Insurance Datasets (Synthetic)
+            
+            **Synthetic datasets** for testing and development.
+            
+            - fraud_cases_synthetic.csv (250 rows)
+            - claims_lifecycle_ifrs_synthetic.csv (251 rows)
+            - policy_clauses_snippets.txt (12 clauses)
+            - All data is 100% fabricated for demonstration
+            
+            **Use Case**: Synthetic data for testing insurance applications
+            
+            [Open Insurance Datasets](https://huggingface.co/spaces/YOUR_USERNAME/insurance-datasets-synthetic)
+            """)
     
     gr.Markdown("""
     ---
     
-    ## 🛠️ Technology Stack
+    ## 🛡️ Mandatory Disclaimers
     
-    All repositories are built with:
-    - **Framework**: Gradio for interactive interfaces
-    - **Language**: Python 3.9+
-    - **Libraries**: pandas, numpy for data processing
-    - **Deployment**: Hugging Face Spaces
+    ### For All Spaces:
     
-    ## 📋 Repository Overview
+    1. **Educational Purpose Only**: These tools demonstrate AI concepts, not production systems
+    2. **Synthetic Data**: All datasets are fabricated - no real insurance information
+    3. **No Business Decisions**: Never use for actual pricing, reserving, claims, or underwriting
+    4. **Human Validation Required**: All outputs must be reviewed by qualified professionals
+    5. **No Regulatory Compliance**: These tools do not ensure compliance with any regulations
+    6. **No Liability**: Vercept and Qoder assume no liability for use of these tools
     
-    | Repository | Type | Primary Function |
-    |------------|------|------------------|
-    | **Insurance Datasets** | Data | Synthetic datasets for testing |
-    | **Fraud Triage Sandbox** | Application | Rule-based fraud detection |
-    | **IFRS Accrual Estimator** | Calculator | Actuarial reserve estimation |
-    | **RAG Compliance Assistant** | Q&A System | Document-based compliance guidance |
+    ### Professional Guidance:
     
-    ## ⚠️ Important Disclaimers
+    For actual insurance operations, always consult:
+    - **Actuaries** for reserving and pricing
+    - **Compliance officers** for regulatory matters
+    - **Legal counsel** for policy interpretation
+    - **Finance teams** for accounting and reporting
+    - **Underwriters** for risk assessment
     
-    ### Synthetic Data Only
-    - All datasets are **100% synthetic**
-    - No real customer, policy, or claim data
-    - Generated for demonstration purposes only
+    ### Privacy & Security:
     
-    ### Advisory Only
-    - All outputs are **advisory and illustrative**
-    - Not suitable for production use
-    - Not intended for actual business decisions
-    
-    ### No Real Business Logic
-    - No real insurer names or policies
-    - No actuarial formulas from real companies
-    - No KYC fields or sensitive data
-    - No pricing or quoting functionality
-    
-    ### Professional Guidance Required
-    - Consult qualified professionals for real implementations
-    - Verify all information with authoritative sources
-    - Follow regulatory requirements and standards
-    
-    ## 🎓 Educational Use
-    
-    These tools are designed for:
-    - **Learning**: Understanding insurance AI concepts
-    - **Training**: Teaching insurance operations
-    - **Prototyping**: Testing workflows and ideas
-    - **Demonstration**: Showcasing capabilities
-    
-    ## 🔒 Compliance & Safety
-    
-    All repositories follow these principles:
-    - **Privacy**: No real personal data
-    - **Security**: No sensitive information
-    - **Transparency**: Clear disclaimers and limitations
-    - **Ethics**: Fair and unbiased demonstrations
-    
-    ## 📖 Documentation
-    
-    Each repository includes:
-    - **README.md**: Overview and usage instructions
-    - **model_card.md**: Detailed technical documentation
-    - **requirements.txt**: Python dependencies
-    - **Utility files**: Supporting code and functions
-    
-    ## 🚀 Getting Started
-    
-    1. **Browse** the repositories above
-    2. **Click** on the repository links to access
-    3. **Explore** the interactive demos
-    4. **Learn** from the examples and documentation
-    
-    ## 💡 Use Case Examples
-    
-    ### For Developers
-    - Test insurance applications with synthetic data
-    - Prototype fraud detection workflows
-    - Learn actuarial calculation methods
-    - Implement RAG systems for compliance
-    
-    ### For Business Analysts
-    - Understand fraud triage processes
-    - Learn IFRS 17 measurement principles
-    - Explore compliance documentation approaches
-    - Analyze synthetic insurance data
-    
-    ### For Students & Educators
-    - Study insurance operations
-    - Learn AI/ML applications in insurance
-    - Practice with realistic (but synthetic) scenarios
-    - Understand regulatory frameworks
-    
-    ## 🔄 Updates & Maintenance
-    
-    These repositories are demonstration tools and may be updated periodically with:
-    - Bug fixes and improvements
-    - Additional features
-    - Enhanced documentation
-    - New examples and use cases
-    
-    ## 📞 Contact & Feedback
-    
-    For questions, feedback, or suggestions:
-    - Visit individual repository pages
-    - Review documentation and model cards
-    - Contact Vercept for more information
+    - No real customer data or PII
+    - No confidential business information
+    - No proprietary algorithms or formulas
+    - No connection to production systems
     
     ---
     
-    ## 🏗️ Architecture Overview
+    ## 📝 About This Hub
     
-    ```
-    GCC Insurance AI Hub (This Page)
-            |
-            ├── Insurance Datasets (Synthetic)
-            |   └── Claims, Policies, Fraud Indicators
-            |
-            ├── Fraud Triage Sandbox
-            |   └── Rule-based Detection & Triage
-            |
-            ├── IFRS 17 Accrual Estimator
-            |   └── Chain Ladder & Reserve Calculation
-            |
-            └── RAG Compliance Assistant
-                └── Document Retrieval & Q&A
-    ```
+    The GCC Insurance Intelligence Lab is a collection of demonstration tools built by **Qoder for Vercept**.
     
-    ## 🎯 Future Enhancements
+    **Purpose**: Educational demonstrations of AI applications in insurance
     
-    Potential additions to this hub:
-    - Additional datasets (underwriting, claims processing)
-    - More specialized calculators
-    - Advanced ML models (with synthetic data)
-    - Integration examples
-    - API documentation
+    **Technology**: Gradio, Python, sentence transformers, scikit-learn
     
-    ---
-    
-    **Built by Qoder for Vercept** | All data synthetic | Advisory only
+    **License**: MIT (for demonstration code only)
     
     **Version**: 1.0.0 | **Last Updated**: January 2026
+    
+    ---
+    
+    **⚠️ Remember**: These are demonstration tools only. Always consult qualified professionals for actual insurance operations.
     """)
 
 if __name__ == "__main__":

@@ -1,400 +1,298 @@
 """
 Document RAG Compliance Assistant
-Interactive demo for document-based question answering using RAG (Retrieval-Augmented Generation).
+Retrieval-Augmented Generation system for insurance policy compliance questions.
+Loads synthetic policy clauses and answers questions using semantic search.
 """
 
 import gradio as gr
-import pandas as pd
 import numpy as np
-from typing import List, Dict, Tuple
+from typing import List, Tuple
+import os
 
-# Synthetic compliance document knowledge base
-COMPLIANCE_DOCS = {
-    "IFRS 17 Overview": """
-    IFRS 17 Insurance Contracts is the international accounting standard for insurance contracts.
-    
-    Key Principles:
-    - Measurement: Insurance liabilities measured at current fulfillment value
-    - Components: Fulfillment cash flows + Contractual service margin
-    - Fulfillment Cash Flows: Estimates of future cash flows, risk adjustment, and discounting
-    - Recognition: Revenue recognized as services are provided
-    - Effective Date: January 1, 2023
-    
-    Building Blocks:
-    1. Estimates of future cash flows
-    2. Adjustment for time value of money (discounting)
-    3. Risk adjustment for non-financial risk
-    4. Contractual service margin (unearned profit)
-    """,
-    
-    "Fraud Detection Best Practices": """
-    Insurance Fraud Detection Best Practices
-    
-    Detection Methods:
-    - Rule-based systems: Predefined criteria and thresholds
-    - Anomaly detection: Statistical analysis of unusual patterns
-    - Network analysis: Identifying fraud rings and connections
-    - Predictive modeling: Machine learning for risk scoring
-    
-    Red Flags:
-    - Claims filed shortly after policy inception
-    - Multiple claims in short time period
-    - Inconsistent claim details
-    - Lack of supporting documentation
-    - Claims from high-risk locations
-    - Weekend or holiday filing patterns
-    
-    Investigation Process:
-    1. Initial triage and risk scoring
-    2. Document review and verification
-    3. Interview claimants and witnesses
-    4. External data validation
-    5. Special investigation unit (SIU) referral if needed
-    
-    Compliance: All fraud detection must comply with privacy laws and fair claims practices.
-    """,
-    
-    "Claims Reserving Standards": """
-    Actuarial Standards for Claims Reserving
-    
-    Methods:
-    - Chain Ladder: Development factor method for projecting ultimate losses
-    - Bornhuetter-Ferguson: Combines expected losses with actual development
-    - Loss Ratio Method: Based on expected loss ratios
-    - Frequency-Severity: Separate analysis of claim counts and amounts
-    
-    Reserve Components:
-    - Case Reserves: Estimated cost of known claims
-    - IBNR: Incurred but not reported claims
-    - IBNER: Incurred but not enough reserved
-    - Reopened Claims: Previously closed claims that reopen
-    
-    Key Considerations:
-    - Development patterns vary by line of business
-    - Tail factors for long-tail lines (liability, workers comp)
-    - Trend adjustments for inflation and claim cost changes
-    - Large loss treatment and catastrophe reserves
-    - Discount for time value of money (IFRS 17)
-    
-    Documentation: All reserve estimates must be documented with clear assumptions and methodology.
-    """,
-    
-    "Data Privacy Regulations": """
-    Insurance Data Privacy and Protection
-    
-    Key Regulations:
-    - GDPR (Europe): General Data Protection Regulation
-    - CCPA (California): California Consumer Privacy Act
-    - HIPAA (US Health): Health Insurance Portability and Accountability Act
-    - State insurance privacy laws
-    
-    Protected Information:
-    - Personal identifiable information (PII)
-    - Health information (PHI)
-    - Financial data
-    - Biometric data
-    - Location data
-    
-    Requirements:
-    - Consent for data collection and use
-    - Right to access personal data
-    - Right to deletion (right to be forgotten)
-    - Data breach notification
-    - Data minimization and purpose limitation
-    - Security safeguards and encryption
-    
-    Insurance-Specific:
-    - Fair Credit Reporting Act (FCRA) compliance
-    - Unfair discrimination prohibitions
-    - Transparent underwriting and rating practices
-    - Secure claims data handling
-    """,
-    
-    "Underwriting Guidelines": """
-    Insurance Underwriting Compliance Guidelines
-    
-    Fair Underwriting Practices:
-    - Non-discrimination: Cannot discriminate based on protected classes
-    - Actuarial justification: Rating factors must be actuarially sound
-    - Transparency: Clear disclosure of rating criteria
-    - Consistency: Apply guidelines uniformly
-    
-    Prohibited Factors:
-    - Race, color, national origin
-    - Religion
-    - Gender (in most jurisdictions)
-    - Marital status (in some jurisdictions)
-    - Genetic information
-    
-    Required Considerations:
-    - Risk assessment based on legitimate factors
-    - Loss history and claims experience
-    - Coverage limits and deductibles
-    - Geographic risk factors (if actuarially justified)
-    - Credit-based insurance scores (where permitted)
-    
-    Documentation:
-    - Underwriting decisions must be documented
-    - Declination reasons must be provided
-    - File documentation for regulatory review
-    - Adverse action notices when required
-    """,
-    
-    "Solvency II Requirements": """
-    Solvency II Framework (European Insurance Regulation)
-    
-    Three Pillars:
-    1. Quantitative Requirements: Capital requirements and technical provisions
-    2. Governance and Risk Management: Internal controls and risk assessment
-    3. Disclosure and Transparency: Reporting to supervisors and public
-    
-    Capital Requirements:
-    - SCR (Solvency Capital Requirement): 99.5% VaR over one year
-    - MCR (Minimum Capital Requirement): Absolute floor
-    - Own Funds: Available capital to meet requirements
-    
-    Technical Provisions:
-    - Best estimate liabilities
-    - Risk margin
-    - Discounting using risk-free rate
-    
-    Risk Categories:
-    - Underwriting risk (life, non-life, health)
-    - Market risk
-    - Credit risk
-    - Operational risk
-    
-    Governance:
-    - Own Risk and Solvency Assessment (ORSA)
-    - Risk management function
-    - Actuarial function
-    - Internal audit and compliance
-    """
-}
-
-# Simple keyword-based retrieval (simulating embeddings)
-def retrieve_relevant_docs(query: str, top_k: int = 2) -> List[Tuple[str, str, float]]:
-    """
-    Retrieve relevant documents based on keyword matching.
-    
-    Args:
-        query: User question
-        top_k: Number of documents to retrieve
-        
-    Returns:
-        List of (doc_name, doc_content, relevance_score) tuples
-    """
-    query_lower = query.lower()
-    scores = []
-    
-    for doc_name, doc_content in COMPLIANCE_DOCS.items():
-        # Simple keyword matching score
-        doc_lower = doc_content.lower()
-        
-        # Count keyword matches
-        keywords = query_lower.split()
-        score = sum(1 for keyword in keywords if len(keyword) > 3 and keyword in doc_lower)
-        
-        # Boost score if doc name matches
-        if any(word in doc_name.lower() for word in keywords):
-            score += 5
-        
-        scores.append((doc_name, doc_content, score))
-    
-    # Sort by score and return top_k
-    scores.sort(key=lambda x: x[2], reverse=True)
-    return scores[:top_k]
+# Try to import sentence transformers, fall back to TF-IDF if not available
+try:
+    from sentence_transformers import SentenceTransformer
+    USE_TRANSFORMERS = True
+except ImportError:
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity
+    USE_TRANSFORMERS = False
 
 
-def generate_answer(query: str, retrieved_docs: List[Tuple[str, str, float]]) -> str:
-    """
-    Generate answer based on retrieved documents.
+class PolicyRAGEngine:
+    """RAG engine for policy document retrieval and question answering."""
     
-    Args:
-        query: User question
-        retrieved_docs: Retrieved documents with scores
+    def __init__(self, policy_file_path: str):
+        self.policy_file_path = policy_file_path
+        self.clauses = []
+        self.clause_titles = []
+        self.embeddings = None
+        self.model = None
+        self.vectorizer = None
         
-    Returns:
-        Generated answer
-    """
-    if not retrieved_docs or retrieved_docs[0][2] == 0:
-        return """
-I couldn't find relevant information in the compliance knowledge base to answer your question.
-
-Please try rephrasing your question or ask about:
-- IFRS 17 accounting standards
-- Fraud detection practices
-- Claims reserving methods
-- Data privacy regulations
-- Underwriting guidelines
-- Solvency II requirements
-"""
+        # Load policy clauses
+        self._load_policy_clauses()
+        
+        # Initialize embedding model
+        self._initialize_embeddings()
     
-    # Build answer from retrieved documents
-    answer = f"**Answer based on compliance documents:**\n\n"
+    def _load_policy_clauses(self):
+        """Load policy clauses from text file."""
+        if not os.path.exists(self.policy_file_path):
+            # Fallback to relative path
+            self.policy_file_path = "../insurance-datasets-synthetic/data/policy_clauses_snippets.txt"
+        
+        with open(self.policy_file_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        # Split by clause headers
+        sections = content.split('CLAUSE ')
+        
+        for section in sections[1:]:  # Skip first empty section
+            lines = section.strip().split('\n', 1)
+            if len(lines) == 2:
+                title = "CLAUSE " + lines[0].strip()
+                text = lines[1].strip()
+                self.clause_titles.append(title)
+                self.clauses.append(text)
     
-    for doc_name, doc_content, score in retrieved_docs:
-        if score > 0:
-            # Extract relevant sections (simplified - just use first few lines)
-            lines = doc_content.strip().split('\n')
-            relevant_section = '\n'.join(lines[:15])  # First 15 lines
+    def _initialize_embeddings(self):
+        """Initialize embedding model (sentence transformers or TF-IDF)."""
+        global USE_TRANSFORMERS
+        if USE_TRANSFORMERS:
+            try:
+                self.model = SentenceTransformer('all-MiniLM-L6-v2')
+                self.embeddings = self.model.encode(self.clauses)
+            except Exception as e:
+                print(f"Error loading sentence transformers: {e}. Falling back to TF-IDF.")
+                USE_TRANSFORMERS = False
+        
+        if not USE_TRANSFORMERS:
+            # Fallback to TF-IDF
+            self.vectorizer = TfidfVectorizer(max_features=500, stop_words='english')
+            self.embeddings = self.vectorizer.fit_transform(self.clauses)
+    
+    def retrieve_relevant_clause(self, question: str, top_k: int = 1) -> List[Tuple[str, str, float]]:
+        """Retrieve most relevant policy clause for a question."""
+        if USE_TRANSFORMERS and self.model is not None:
+            # Use sentence transformers
+            question_embedding = self.model.encode([question])[0]
+            similarities = np.dot(self.embeddings, question_embedding)
+            top_indices = np.argsort(similarities)[::-1][:top_k]
             
-            answer += f"**From: {doc_name}**\n\n{relevant_section}\n\n---\n\n"
+            results = []
+            for idx in top_indices:
+                results.append((
+                    self.clause_titles[idx],
+                    self.clauses[idx],
+                    float(similarities[idx])
+                ))
+            return results
+        else:
+            # Use TF-IDF
+            question_vec = self.vectorizer.transform([question])
+            similarities = cosine_similarity(question_vec, self.embeddings)[0]
+            top_indices = np.argsort(similarities)[::-1][:top_k]
+            
+            results = []
+            for idx in top_indices:
+                results.append((
+                    self.clause_titles[idx],
+                    self.clauses[idx],
+                    float(similarities[idx])
+                ))
+            return results
     
-    answer += """
-⚠️ **Disclaimer**: This is a demonstration using synthetic compliance documents. 
-For actual compliance guidance, consult official regulations and qualified professionals.
-"""
-    
-    return answer
-
-
-def rag_query(question: str, num_docs: int = 2) -> Tuple[str, pd.DataFrame]:
-    """
-    Process RAG query and return answer with source documents.
-    
-    Args:
-        question: User question
-        num_docs: Number of documents to retrieve
+    def answer_question(self, question: str) -> Tuple[str, str, float, str, str]:
+        """Answer a question using RAG approach."""
+        # Check for out-of-scope questions
+        out_of_scope_keywords = [
+            'pricing', 'premium calculation', 'underwriting decision',
+            'approve', 'deny', 'legal advice', 'tax', 'investment',
+            'medical diagnosis', 'claim amount', 'reserve amount'
+        ]
         
-    Returns:
-        Tuple of (answer, sources_dataframe)
-    """
-    # Retrieve relevant documents
-    retrieved = retrieve_relevant_docs(question, top_k=num_docs)
+        question_lower = question.lower()
+        for keyword in out_of_scope_keywords:
+            if keyword in question_lower:
+                return (
+                    "Out of Scope",
+                    "This question is beyond the scope of this compliance assistant. This tool only provides information about policy clauses and general compliance concepts. For pricing, underwriting, legal advice, or specific claim decisions, please consult appropriate professionals.",
+                    0.0,
+                    "This question is out of scope for this tool.",
+                    "⚠️ This question requires human expert consultation."
+                )
+        
+        # Retrieve most relevant clause
+        results = self.retrieve_relevant_clause(question, top_k=1)
+        
+        if not results:
+            return (
+                "No Match",
+                "I couldn't find a relevant policy clause for your question.",
+                0.0,
+                "No matching clause found.",
+                "⚠️ Please consult policy documentation or compliance team."
+            )
+        
+        title, clause_text, similarity = results[0]
+        
+        # Generate explanation
+        explanation = self._generate_explanation(question, title, clause_text, similarity)
+        
+        # Generate warning
+        warning = self._generate_warning(similarity)
+        
+        return title, clause_text, similarity, explanation, warning
     
-    # Generate answer
-    answer = generate_answer(question, retrieved)
+    def _generate_explanation(self, question: str, title: str, clause: str, similarity: float) -> str:
+        """Generate explanation for the retrieved clause."""
+        if similarity < 0.3:
+            return f"The most relevant clause found is '{title}', but the similarity score is low ({similarity:.2f}). This clause may not directly answer your question. Please review the clause text carefully and consult compliance experts if needed."
+        elif similarity < 0.6:
+            return f"Found '{title}' with moderate relevance ({similarity:.2f}). This clause may contain information related to your question. Please review the full clause text and verify with compliance team."
+        else:
+            return f"Found '{title}' with high relevance ({similarity:.2f}). This clause appears to be directly related to your question. However, always verify with compliance experts before making decisions."
     
-    # Create sources dataframe
-    sources_data = {
-        "Document": [doc[0] for doc in retrieved],
-        "Relevance Score": [doc[2] for doc in retrieved],
-        "Preview": [doc[1][:200] + "..." for doc in retrieved]
-    }
-    sources_df = pd.DataFrame(sources_data)
+    def _generate_warning(self, similarity: float) -> str:
+        """Generate appropriate warning based on similarity score."""
+        base_warning = "⚠️ **IMPORTANT**: This is an automated retrieval system. "
+        
+        if similarity < 0.3:
+            return base_warning + "The match quality is LOW. This response may not be accurate. **Human review is REQUIRED** before using this information."
+        elif similarity < 0.6:
+            return base_warning + "The match quality is MODERATE. **Human review is REQUIRED** to verify accuracy and applicability."
+        else:
+            return base_warning + "Even with high match quality, **human review is REQUIRED**. Never make compliance decisions based solely on automated systems."
+
+
+# Initialize RAG engine
+POLICY_FILE = "../insurance-datasets-synthetic/data/policy_clauses_snippets.txt"
+rag_engine = PolicyRAGEngine(POLICY_FILE)
+
+
+def process_question(question: str) -> Tuple[str, str, str, str, str]:
+    """Process user question and return formatted response."""
+    if not question or len(question.strip()) < 5:
+        return (
+            "Invalid Input",
+            "Please enter a valid question (at least 5 characters).",
+            "N/A",
+            "",
+            "⚠️ Please provide a complete question."
+        )
     
-    return answer, sources_df
+    title, clause_text, similarity, explanation, warning = rag_engine.answer_question(question)
+    
+    # Format similarity score
+    similarity_str = f"{similarity:.3f}" if similarity > 0 else "N/A"
+    
+    return title, clause_text, similarity_str, explanation, warning
 
 
 # Create Gradio interface
-with gr.Blocks(title="Document RAG Compliance Assistant", theme=gr.themes.Soft()) as demo:
+with gr.Blocks(title="Document RAG Compliance Assistant") as demo:
     gr.Markdown("""
     # 📚 Document RAG Compliance Assistant
     
-    Ask questions about insurance compliance topics and get answers from our knowledge base.
+    ## ⚠️ CRITICAL DISCLAIMER
     
-    **Available Topics:**
-    - IFRS 17 Accounting Standards
-    - Fraud Detection Best Practices
-    - Claims Reserving Standards
-    - Data Privacy Regulations
-    - Underwriting Guidelines
-    - Solvency II Requirements
+    **This tool is for EDUCATIONAL and DEMONSTRATION purposes ONLY.**
     
-    **How it works:**
-    1. Enter your question
-    2. System retrieves relevant documents (RAG - Retrieval-Augmented Generation)
-    3. Answer is generated based on retrieved content
-    4. Source documents are shown for transparency
+    - **NOT for production compliance decisions**
+    - **NOT a substitute for legal or compliance professionals**
+    - **All outputs require human expert validation**
+    - **No liability for decisions based on this tool**
     
-    ⚠️ **Demo only** - uses synthetic documents for illustration purposes.
+    This system uses Retrieval-Augmented Generation (RAG) to find relevant policy clauses
+    based on your questions. It searches through synthetic policy documents and returns
+    the most relevant clause with an explanation.
+    
+    ### How It Works:
+    1. Enter your compliance or policy question
+    2. The system searches through policy clauses using semantic similarity
+    3. Returns the most relevant clause with similarity score
+    4. Provides explanation and mandatory human review warning
+    
+    ### Out-of-Scope Questions:
+    This tool does NOT answer questions about:
+    - Pricing or premium calculations
+    - Underwriting decisions
+    - Legal advice
+    - Specific claim amounts or approvals
+    - Tax or investment advice
     """)
     
     with gr.Row():
         with gr.Column():
             question_input = gr.Textbox(
                 label="Your Question",
-                placeholder="e.g., What are the key components of IFRS 17?",
+                placeholder="e.g., What are the deductible requirements? What happens if I cancel my policy?",
                 lines=3
             )
-            num_docs_slider = gr.Slider(
-                label="Number of Documents to Retrieve",
-                minimum=1,
-                maximum=5,
-                value=2,
-                step=1
-            )
-            submit_btn = gr.Button("Ask Question", variant="primary")
-            
-            gr.Markdown("### Example Questions:")
-            gr.Markdown("""
-            - What are the key principles of IFRS 17?
-            - How should we detect insurance fraud?
-            - What methods are used for claims reserving?
-            - What are the data privacy requirements for insurance?
-            - What factors are prohibited in underwriting?
-            - What are the Solvency II capital requirements?
-            """)
-    
-    gr.Markdown("---")
+            submit_btn = gr.Button("Search Policy Clauses", variant="primary")
+            clear_btn = gr.Button("Clear")
     
     with gr.Row():
-        answer_output = gr.Markdown(label="Answer")
+        with gr.Column():
+            clause_title = gr.Textbox(label="Relevant Clause", interactive=False)
+            similarity_score = gr.Textbox(label="Similarity Score", interactive=False)
     
     with gr.Row():
-        sources_output = gr.Dataframe(
-            label="Source Documents",
-            headers=["Document", "Relevance Score", "Preview"],
+        clause_text = gr.Textbox(
+            label="Clause Text",
+            lines=8,
             interactive=False
         )
     
-    # Connect button to function
-    submit_btn.click(
-        fn=rag_query,
-        inputs=[question_input, num_docs_slider],
-        outputs=[answer_output, sources_output]
-    )
-    
-    # Example questions as buttons
-    gr.Markdown("### Quick Examples:")
+    with gr.Row():
+        explanation = gr.Textbox(
+            label="Explanation",
+            lines=4,
+            interactive=False
+        )
     
     with gr.Row():
-        example1 = gr.Button("IFRS 17 Components")
-        example2 = gr.Button("Fraud Red Flags")
-        example3 = gr.Button("Reserve Methods")
+        warning = gr.Markdown("### ⚠️ Human Review Required")
     
-    example1.click(
-        fn=lambda: rag_query("What are the key components of IFRS 17 measurement?", 2),
-        inputs=[],
-        outputs=[answer_output, sources_output]
+    # Example questions
+    gr.Examples(
+        examples=[
+            ["What are the coverage limitations?"],
+            ["How do I file a claim?"],
+            ["What is the deductible policy?"],
+            ["Can the policy be cancelled?"],
+            ["What happens in case of fraud?"],
+            ["What are my duties after a loss?"]
+        ],
+        inputs=question_input
     )
     
-    example2.click(
-        fn=lambda: rag_query("What are common fraud detection red flags?", 2),
-        inputs=[],
-        outputs=[answer_output, sources_output]
+    # Event handlers
+    submit_btn.click(
+        fn=process_question,
+        inputs=[question_input],
+        outputs=[clause_title, clause_text, similarity_score, explanation, warning]
     )
     
-    example3.click(
-        fn=lambda: rag_query("What methods are used for claims reserving?", 2),
+    clear_btn.click(
+        fn=lambda: ("", "", "", "", ""),
         inputs=[],
-        outputs=[answer_output, sources_output]
+        outputs=[clause_title, clause_text, similarity_score, explanation, warning]
     )
     
     gr.Markdown("""
     ---
     
-    ### About RAG (Retrieval-Augmented Generation)
+    ### 🛡️ Compliance & Safety Notes:
     
-    RAG is a technique that combines:
-    1. **Retrieval**: Finding relevant documents from a knowledge base
-    2. **Generation**: Creating answers based on retrieved content
+    - **Synthetic Data Only**: All policy clauses are fabricated for demonstration
+    - **No Real Policies**: Does not contain actual insurance product information
+    - **Human-in-the-Loop**: All outputs must be reviewed by compliance professionals
+    - **Educational Purpose**: For learning RAG concepts, not production use
+    - **No Guarantees**: Similarity scores do not guarantee accuracy or applicability
     
-    **Benefits:**
-    - Grounded in source documents (reduces hallucination)
-    - Transparent (shows sources)
-    - Updatable (add new documents without retraining)
-    - Domain-specific (uses your organization's knowledge)
-    
-    **This Demo:**
-    - Uses simple keyword matching (real systems use embeddings)
-    - Synthetic compliance documents (not real regulations)
-    - Template-based generation (real systems use LLMs)
-    
-    ---
-    
-    **Built by Qoder for Vercept** | All data synthetic | Advisory only
+    **Always consult qualified compliance, legal, and insurance professionals for actual policy interpretation.**
     """)
 
 if __name__ == "__main__":

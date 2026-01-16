@@ -14,7 +14,7 @@ license: mit
 
 ## Overview
 
-An interactive demonstration tool for estimating insurance claim reserves under IFRS 17 accounting principles. This application calculates the liability for incurred claims (LIC) using actuarial methods and IFRS 17 measurement components.
+An interactive demonstration tool for estimating symbolic accrual brackets for insurance claims under IFRS 17 principles. This application uses rule-based logic to assign reserve brackets based on claim characteristics. **Note: This tool provides symbolic brackets only, NOT actual monetary amounts.**
 
 ---
 
@@ -30,34 +30,45 @@ No AI component here issues approvals, denials, or financial outcomes. All outpu
 
 ## Features
 
-- **Ultimate Loss Estimation**: Chain ladder method with claim type-specific development patterns
-- **Risk Adjustment**: Configurable uncertainty compensation (Low/Medium/High)
-- **Present Value Discounting**: Time value of money calculations
-- **Complete Accrual Breakdown**: Detailed component analysis
-- **Interactive Interface**: Real-time calculations with adjustable parameters
+- **Accrual Bracket Assignment**: Rule-based symbolic bracket estimation (Band A through E)
+- **Claim Stage Analysis**: Considers current stage of claim processing
+- **Severity Assessment**: Evaluates claim severity impact on reserves
+- **Investigation Duration**: Accounts for complexity indicated by investigation length
+- **IBNR Handling**: Special consideration for Incurred But Not Reported claims
+- **Uncertainty Scoring**: Confidence assessment based on available information
+- **Human Review Warnings**: Mandatory human-in-the-loop enforcement
+- **Interactive Interface**: Real-time bracket assignment with detailed explanations
 
-## IFRS 17 Components
+## Accrual Brackets
 
-This tool calculates the following components:
+This tool assigns symbolic reserve brackets based on claim characteristics:
 
-### 1. Ultimate Loss Estimate
+### Band A (Low Reserve)
+- Early stage claims with minor severity
+- Short investigation periods
+- Reported claims with good information
 
-Uses the **chain ladder method** with synthetic loss development factors (LDFs) for:
-- Auto claims
-- Property claims
-- Liability claims
-- Health claims
-- Workers compensation claims
+### Band B (Moderate Reserve)
+- Standard claims with moderate characteristics
+- Normal investigation timeframes
+- Typical severity levels
 
-### 2. Outstanding Claims
+### Band C (Elevated Reserve)
+- Claims with elevated risk factors
+- Moderate investigation duration or severity
+- Some uncertainty in estimation
 
-Calculated as: `Ultimate Loss - Paid Loss`
+### Band D (High Reserve)
+- Severe claims or extended investigations
+- Higher uncertainty factors
+- Complex claim scenarios
 
-Includes both:
-- Case reserves (known claims not yet paid)
-- IBNR (Incurred But Not Reported)
+### Band E (Maximum Reserve)
+- Catastrophic severity claims
+- IBNR with high uncertainty
+- Maximum reserve consideration required
 
-### 3. Risk Adjustment
+## Input Parameters
 
 Compensation for uncertainty about amount and timing:
 - **Low Risk**: 5% of ultimate loss

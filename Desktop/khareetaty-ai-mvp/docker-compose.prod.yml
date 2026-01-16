@@ -1,0 +1,191 @@
+version: '3.8'
+
+# Khareetaty AI - Phase 5 Production Deployment
+# Multi-service orchestration with PostGIS, Redis, and monitoring
+
+services:
+  
+  # PostgreSQL with PostGIS extension
+  postgres:
+    image: postgis/postgis:15-3.3-alpine
+    container_name: khareetaty-postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=${DB_NAME:-khareetaty_ai}
+      - POSTGRES_USER=${DB_USER:-bdr.ai}
+      - POSTGRES_PASSWORD=${DB_PASSWORD:-secret123}
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/db/phase5_migrations.sql:/docker-entrypoint-initdb.d/01-phase5-migrations.sql:ro
+      - ./backend/db/migrations.sql:/docker-entrypoint-initdb.d/02-migrations.sql:ro
+    ports:
+      - "${DB_PORT:-5432}:5432"
+    networks:
+      - khareetaty-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER:-bdr.ai} -d ${DB_NAME:-khareetaty_ai}"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
+
+  # Redis for caching and background tasks
+  redis:
+    image: redis:7-alpine
+    container_name: khareetaty-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "${REDIS_PORT:-6379}:6379"
+    networks:
+      - khareetaty-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # FastAPI Backend Service
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: khareetaty-backend
+    restart: unless-stopped
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:-khareetaty_ai}
+      - DB_USER=${DB_USER:-bdr.ai}
+      - DB_PASSWORD=${DB_PASSWORD:-secret123}
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+      - AUTH_TOKEN=${AUTH_TOKEN:-khareetaty-secure}
+      - TWILIO_ACCOUNT_SID=${TWILIO_ACCOUNT_SID}
+      - TWILIO_AUTH_TOKEN=${TWILIO_AUTH_TOKEN}
+      - TWILIO_WHATSAPP_NUMBER=${TWILIO_WHATSAPP_NUMBER:-whatsapp:+14155238886}
+      - WHATSAPP_TO=${WHATSAPP_TO:-whatsapp:+96566338736}
+      - ENVIRONMENT=production
+      - DEBUG=false
+      - LOG_LEVEL=INFO
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "${API_PORT:-8000}:8000"
+    networks:
+      - khareetaty-network
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  # Streamlit Dashboard
+  dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: khareetaty-dashboard
+    restart: unless-stopped
+    environment:
+      - API_BASE_URL=http://backend:8000
+      - API_TOKEN=${AUTH_TOKEN:-khareetaty-secure}
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=${DB_NAME:-khareetaty_ai}
+      - DB_USER=${DB_USER:-bdr.ai}
+      - DB_PASSWORD=${DB_PASSWORD:-secret123}
+    depends_on:
+      backend:
+        condition: service_healthy
+    ports:
+      - "${DASHBOARD_PORT:-8501}:8501"
+    networks:
+      - khareetaty-network
+    volumes:
+      - ./data:/app/data
+
+  # NGINX Reverse Proxy
+  nginx:
+    image: nginx:alpine
+    container_name: khareetaty-nginx
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d:/etc/nginx/conf.d:ro
+      - ./nginx/certs:/etc/nginx/certs:ro
+      - ./nginx/logs:/var/log/nginx
+    depends_on:
+      - backend
+      - dashboard
+    networks:
+      - khareetaty-network
+
+  # Prometheus Monitoring
+  prometheus:
+    image: prom/prometheus:v2.47.0
+    container_name: khareetaty-prometheus
+    restart: unless-stopped
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    ports:
+      - "${PROMETHEUS_PORT:-9090}:9090"
+    networks:
+      - khareetaty-network
+
+  # Grafana Dashboard
+  grafana:
+    image: grafana/grafana:10.1.0
+    container_name: khareetaty-grafana
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin123}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources:ro
+    ports:
+      - "${GRAFANA_PORT:-3000}:3000"
+    networks:
+      - khareetaty-network
+    depends_on:
+      - prometheus
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  prometheus_data:
+    driver: local
+  grafana_data:
+    driver: local
+
+networks:
+  khareetaty-network:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/16

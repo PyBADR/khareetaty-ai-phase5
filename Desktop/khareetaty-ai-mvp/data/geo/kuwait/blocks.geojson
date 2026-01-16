@@ -1,0 +1,297 @@
+{
+  "type": "FeatureCollection",
+  "name": "kuwait_blocks",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-001-B1",
+        "name_en": "Kuwait City Block 1",
+        "name_ar": "مدينة الكويت قطعة 1",
+        "district_code": "CA-001",
+        "district": "Kuwait City",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.980, 29.370]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-001-B2",
+        "name_en": "Kuwait City Block 2",
+        "name_ar": "مدينة الكويت قطعة 2",
+        "district_code": "CA-001",
+        "district": "Kuwait City",
+        "block_number": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.985, 29.372]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-002-B1",
+        "name_en": "Dasman Block 1",
+        "name_ar": "دسمان قطعة 1",
+        "district_code": "CA-002",
+        "district": "Dasman",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.000, 29.370]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-002-B2",
+        "name_en": "Dasman Block 2",
+        "name_ar": "دسمان قطعة 2",
+        "district_code": "CA-002",
+        "district": "Dasman",
+        "block_number": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.005, 29.372]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-003-B1",
+        "name_en": "Sharq Block 1",
+        "name_ar": "شرق قطعة 1",
+        "district_code": "CA-003",
+        "district": "Sharq",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.020, 29.370]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "CA-003-B2",
+        "name_en": "Sharq Block 2",
+        "name_ar": "شرق قطعة 2",
+        "district_code": "CA-003",
+        "district": "Sharq",
+        "block_number": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.025, 29.372]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "HA-001-B1",
+        "name_en": "Hawalli Block 1",
+        "name_ar": "حولي قطعة 1",
+        "district_code": "HA-001",
+        "district": "Hawalli",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.030, 29.315]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "HA-001-B2",
+        "name_en": "Hawalli Block 2",
+        "name_ar": "حولي قطعة 2",
+        "district_code": "HA-001",
+        "district": "Hawalli",
+        "block_number": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.035, 29.317]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "HA-002-B1",
+        "name_en": "Salmiya Block 1",
+        "name_ar": "السالمية قطعة 1",
+        "district_code": "HA-002",
+        "district": "Salmiya",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.050, 29.315]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "HA-002-B2",
+        "name_en": "Salmiya Block 2",
+        "name_ar": "السالمية قطعة 2",
+        "district_code": "HA-002",
+        "district": "Salmiya",
+        "block_number": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.055, 29.317]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "FA-001-B1",
+        "name_en": "Farwaniya Block 1",
+        "name_ar": "الفروانية قطعة 1",
+        "district_code": "FA-001",
+        "district": "Farwaniya",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.930, 29.275]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "FA-001-B2",
+        "name_en": "Farwaniya Block 2",
+        "name_ar": "الفروانية قطعة 2",
+        "district_code": "FA-001",
+        "district": "Farwaniya",
+        "block_number": "2"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.935, 29.280]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "FA-002-B1",
+        "name_en": "Jleeb Al-Shuyoukh Block 1",
+        "name_ar": "جليب الشيوخ قطعة 1",
+        "district_code": "FA-002",
+        "district": "Jleeb Al-Shuyoukh",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.950, 29.275]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MU-001-B1",
+        "name_en": "Mubarak Al-Kabeer Block 1",
+        "name_ar": "مبارك الكبير قطعة 1",
+        "district_code": "MU-001",
+        "district": "Mubarak Al-Kabeer",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.030, 29.220]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "MU-002-B1",
+        "name_en": "Sabah Al-Salem Block 1",
+        "name_ar": "صباح السالم قطعة 1",
+        "district_code": "MU-002",
+        "district": "Sabah Al-Salem",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.050, 29.220]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "AH-001-B1",
+        "name_en": "Ahmadi Block 1",
+        "name_ar": "الأحمدي قطعة 1",
+        "district_code": "AH-001",
+        "district": "Ahmadi",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.070, 29.070]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "AH-002-B1",
+        "name_en": "Fahaheel Block 1",
+        "name_ar": "الفحيحيل قطعة 1",
+        "district_code": "AH-002",
+        "district": "Fahaheel",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [48.120, 29.070]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "JA-001-B1",
+        "name_en": "Jahra Block 1",
+        "name_ar": "الجهراء قطعة 1",
+        "district_code": "JA-001",
+        "district": "Jahra",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.700, 29.700]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "JA-002-B1",
+        "name_en": "Qasr Block 1",
+        "name_ar": "القصر قطعة 1",
+        "district_code": "JA-002",
+        "district": "Qasr",
+        "block_number": "1"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [47.800, 29.700]
+      }
+    }
+  ]
+}

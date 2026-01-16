@@ -1,0 +1,251 @@
+claim_stage,expected_severity,incurred_but_not_reported_flag,accrual_factor,expected_loss_amount,uncertainty_score
+Under Investigation,Minor,No,0.722,3204.03,0.356
+Under Investigation,Minor,No,0.677,1286.04,0.337
+Approved,Minor,No,0.923,7444.18,0.31
+IBNR,Moderate,Yes,0.835,21127.63,0.891
+Evaluated,Catastrophic,No,0.768,324383.6,0.387
+Closed,Minor,No,1.0,1834.71,0.015
+Closed,Severe,No,1.0,171069.24,0.109
+Under Investigation,Catastrophic,No,0.524,434542.63,0.551
+Closed,Moderate,No,1.0,38182.87,0.007
+Approved,Severe,No,0.978,178297.66,0.36
+IBNR,Severe,Yes,0.836,175116.56,0.573
+Closed,Moderate,No,1.0,36807.01,0.105
+Under Investigation,Moderate,No,0.66,19792.44,0.485
+Settled,Moderate,No,1.0,37384.57,0.126
+Reported,Moderate,No,0.547,42201.83,0.681
+Under Investigation,Moderate,No,0.774,32687.2,0.587
+Approved,Catastrophic,No,0.901,931638.07,0.238
+Settled,Moderate,No,1.0,19865.1,0.084
+Settled,Catastrophic,No,1.0,918258.31,0.06
+Approved,Moderate,No,0.916,13636.38,0.114
+Under Investigation,Moderate,No,0.688,41683.17,0.469
+Under Investigation,Catastrophic,No,0.614,996897.1,0.512
+Reported,Minor,No,0.505,5832.73,0.62
+Closed,Minor,No,1.0,3641.5,0.024
+Reported,Severe,No,0.592,164294.33,0.728
+Under Investigation,Severe,No,0.753,126149.43,0.38
+Closed,Moderate,No,1.0,31575.16,0.117
+Reported,Severe,No,0.447,66780.16,0.663
+Settled,Moderate,No,1.0,12317.01,0.132
+Under Investigation,Minor,No,0.72,8344.21,0.691
+Evaluated,Moderate,No,0.832,47873.95,0.15
+IBNR,Moderate,Yes,0.979,40210.61,0.81
+Settled,Catastrophic,No,1.0,996119.49,0.097
+Reopened,Catastrophic,No,0.636,379757.87,0.435
+Approved,Moderate,No,0.851,38313.64,0.118
+Under Investigation,Minor,No,0.758,1637.72,0.395
+Reopened,Moderate,No,0.762,38934.1,0.653
+Reopened,Moderate,No,0.835,42299.88,0.376
+Under Investigation,Catastrophic,No,0.606,528881.82,0.646
+Reported,Minor,No,0.318,7553.92,0.86
+Under Investigation,Moderate,No,0.557,31451.43,0.356
+Evaluated,Severe,No,0.793,181172.89,0.123
+Under Investigation,Minor,No,0.696,5865.29,0.306
+Under Investigation,Moderate,No,0.55,29425.65,0.385
+IBNR,Minor,Yes,0.749,1019.4,0.676
+Reopened,Severe,No,0.727,193597.65,0.698
+Reopened,Moderate,No,0.657,18708.04,0.323
+Reported,Severe,No,0.317,137626.64,0.726
+Evaluated,Minor,No,0.892,1721.0,0.156
+Under Investigation,Moderate,No,0.621,47663.85,0.528
+Reported,Minor,No,0.426,6253.05,0.735
+Settled,Moderate,No,1.0,36789.04,0.047
+Settled,Catastrophic,No,1.0,304702.63,0.097
+Reopened,Severe,No,0.879,190360.14,0.304
+Under Investigation,Minor,No,0.661,5552.96,0.353
+Closed,Minor,No,1.0,8913.43,0.055
+Evaluated,Catastrophic,No,0.867,762831.94,0.284
+Reported,Severe,No,0.58,65537.98,0.895
+Settled,Minor,No,1.0,9007.41,0.111
+Evaluated,Severe,No,0.756,81594.45,0.203
+Settled,Catastrophic,No,1.0,400897.0,0.136
+Reported,Minor,No,0.49,8464.13,0.52
+Closed,Moderate,No,1.0,35484.54,0.039
+Reopened,Catastrophic,No,0.768,289499.1,0.678
+Evaluated,Minor,No,0.867,6242.59,0.144
+Evaluated,Minor,No,0.762,9090.83,0.339
+Reported,Severe,No,0.363,87429.46,0.546
+IBNR,Moderate,Yes,0.978,19469.49,0.573
+Evaluated,Catastrophic,No,0.705,789251.58,0.2
+IBNR,Moderate,Yes,0.78,41494.98,0.549
+Reported,Catastrophic,No,0.367,853269.28,0.707
+Settled,Moderate,No,1.0,18916.94,0.099
+IBNR,Severe,Yes,0.784,60413.11,0.848
+Closed,Catastrophic,No,1.0,743614.49,0.127
+Closed,Minor,No,1.0,2038.08,0.146
+Evaluated,Severe,No,0.708,139485.69,0.204
+Closed,Catastrophic,No,1.0,684967.08,0.077
+IBNR,Moderate,Yes,0.776,38351.41,0.501
+Approved,Severe,No,0.906,192331.17,0.376
+Closed,Minor,No,1.0,7477.79,0.045
+Settled,Catastrophic,No,1.0,460946.32,0.105
+Evaluated,Moderate,No,0.784,47614.55,0.303
+Evaluated,Severe,No,0.781,175058.78,0.191
+Approved,Catastrophic,No,0.952,685329.26,0.197
+Reopened,Catastrophic,No,0.803,608939.2,0.617
+Evaluated,Minor,No,0.757,6974.68,0.286
+Under Investigation,Moderate,No,0.702,18985.63,0.38
+Reported,Minor,No,0.373,5276.23,0.882
+Under Investigation,Catastrophic,No,0.624,703812.3,0.378
+IBNR,Catastrophic,Yes,0.82,318057.08,0.809
+Under Investigation,Catastrophic,No,0.566,843287.88,0.578
+Reopened,Minor,No,0.767,9257.23,0.349
+Evaluated,Catastrophic,No,0.834,990313.96,0.279
+Reopened,Catastrophic,No,0.849,638297.56,0.659
+Reopened,Catastrophic,No,0.678,397791.79,0.555
+Reopened,Moderate,No,0.682,13099.33,0.414
+Settled,Severe,No,1.0,97956.44,0.081
+Evaluated,Moderate,No,0.746,37757.99,0.312
+Under Investigation,Catastrophic,No,0.622,634088.91,0.466
+Approved,Catastrophic,No,0.901,815836.62,0.384
+Reported,Catastrophic,No,0.443,954193.33,0.634
+IBNR,Catastrophic,Yes,0.861,787707.25,0.86
+Approved,Catastrophic,No,0.879,548668.78,0.109
+Closed,Catastrophic,No,1.0,779345.1,0.126
+Evaluated,Minor,No,0.881,6327.03,0.299
+Under Investigation,Catastrophic,No,0.541,569358.76,0.32
+IBNR,Severe,Yes,0.763,99026.87,0.843
+IBNR,Severe,Yes,0.926,174788.64,0.614
+Under Investigation,Catastrophic,No,0.506,631535.24,0.7
+Closed,Moderate,No,1.0,36005.76,0.117
+Reported,Minor,No,0.585,2794.25,0.509
+Evaluated,Moderate,No,0.725,36778.35,0.269
+Approved,Catastrophic,No,0.941,813518.48,0.15
+Under Investigation,Moderate,No,0.789,14323.95,0.31
+Settled,Catastrophic,No,1.0,517323.55,0.107
+Under Investigation,Moderate,No,0.531,40899.24,0.64
+Under Investigation,Minor,No,0.604,4855.4,0.448
+Closed,Minor,No,1.0,8646.18,0.123
+Under Investigation,Catastrophic,No,0.788,708468.08,0.631
+Evaluated,Catastrophic,No,0.735,617397.4,0.295
+Reopened,Catastrophic,No,0.731,784820.97,0.407
+Approved,Minor,No,0.886,5057.22,0.325
+IBNR,Severe,Yes,0.709,177642.93,0.582
+Approved,Severe,No,0.954,101050.83,0.364
+Settled,Minor,No,1.0,5649.65,0.029
+Approved,Catastrophic,No,0.914,806531.72,0.307
+Reopened,Catastrophic,No,0.838,274442.68,0.389
+Approved,Severe,No,0.936,105353.07,0.266
+Closed,Catastrophic,No,1.0,997305.17,0.083
+Closed,Catastrophic,No,1.0,416733.14,0.038
+Under Investigation,Moderate,No,0.595,39715.24,0.68
+Evaluated,Moderate,No,0.743,29367.94,0.317
+Settled,Minor,No,1.0,8493.66,0.044
+Closed,Moderate,No,1.0,22090.7,0.106
+Evaluated,Severe,No,0.709,58178.9,0.188
+Evaluated,Catastrophic,No,0.721,209812.32,0.185
+Reopened,Catastrophic,No,0.702,972398.11,0.401
+Reopened,Minor,No,0.847,4606.37,0.33
+Reported,Moderate,No,0.345,32513.58,0.637
+Approved,Minor,No,0.923,4745.57,0.279
+Approved,Catastrophic,No,0.909,554176.8,0.358
+IBNR,Severe,Yes,0.871,59034.55,0.932
+Under Investigation,Moderate,No,0.688,20585.85,0.332
+Approved,Moderate,No,0.922,16261.3,0.223
+Reopened,Severe,No,0.61,93215.73,0.413
+Reopened,Minor,No,0.806,9315.2,0.615
+Approved,Catastrophic,No,0.865,379847.56,0.145
+Settled,Moderate,No,1.0,12856.39,0.025
+Settled,Severe,No,1.0,115873.02,0.07
+Settled,Catastrophic,No,1.0,954140.99,0.075
+Reopened,Catastrophic,No,0.624,231888.63,0.473
+Closed,Severe,No,1.0,53879.73,0.034
+Reported,Severe,No,0.473,164466.35,0.579
+Reopened,Severe,No,0.654,137799.44,0.554
+Reopened,Minor,No,0.741,4675.13,0.428
+Under Investigation,Moderate,No,0.599,37746.95,0.415
+IBNR,Minor,Yes,0.836,3830.65,0.645
+IBNR,Minor,Yes,0.897,5883.34,0.686
+Approved,Severe,No,0.931,124773.97,0.233
+Reported,Moderate,No,0.38,15240.53,0.63
+Reopened,Minor,No,0.609,6670.2,0.62
+Evaluated,Severe,No,0.81,132837.71,0.128
+Under Investigation,Catastrophic,No,0.784,718167.75,0.362
+Settled,Severe,No,1.0,112323.55,0.072
+Reopened,Moderate,No,0.737,15785.68,0.376
+Evaluated,Minor,No,0.755,8110.06,0.224
+Settled,Minor,No,1.0,3545.55,0.045
+Reopened,Moderate,No,0.734,29373.66,0.433
+IBNR,Catastrophic,Yes,0.98,895681.35,0.941
+Approved,Catastrophic,No,0.88,820435.58,0.113
+Reopened,Catastrophic,No,0.716,730951.06,0.628
+Evaluated,Catastrophic,No,0.893,300997.02,0.39
+Closed,Minor,No,1.0,8867.71,0.066
+Reopened,Minor,No,0.817,4689.81,0.562
+Evaluated,Minor,No,0.794,9722.83,0.202
+IBNR,Minor,Yes,0.956,8671.07,0.887
+IBNR,Severe,Yes,0.888,183115.8,0.72
+Reported,Minor,No,0.37,7159.6,0.629
+Approved,Minor,No,0.906,1885.99,0.29
+Under Investigation,Catastrophic,No,0.55,439572.86,0.312
+Closed,Minor,No,1.0,3640.31,0.056
+Evaluated,Moderate,No,0.806,32637.12,0.338
+Evaluated,Moderate,No,0.716,44833.58,0.286
+Approved,Catastrophic,No,0.969,314494.18,0.238
+Settled,Catastrophic,No,1.0,404261.37,0.001
+Reopened,Severe,No,0.803,73696.34,0.477
+Closed,Severe,No,1.0,145840.81,0.064
+Settled,Catastrophic,No,1.0,876243.14,0.03
+IBNR,Catastrophic,Yes,0.732,505091.44,0.662
+Settled,Severe,No,1.0,53290.94,0.125
+IBNR,Severe,Yes,0.702,179760.11,0.85
+Reported,Catastrophic,No,0.55,922347.93,0.849
+Approved,Severe,No,0.878,78519.8,0.175
+Evaluated,Minor,No,0.881,6817.07,0.193
+Reopened,Minor,No,0.774,7591.24,0.336
+Settled,Severe,No,1.0,162122.13,0.026
+Evaluated,Severe,No,0.806,187023.05,0.349
+Settled,Catastrophic,No,1.0,973907.26,0.044
+Closed,Minor,No,1.0,5214.98,0.011
+Approved,Catastrophic,No,0.976,843670.12,0.21
+IBNR,Minor,Yes,0.779,2112.3,0.666
+Settled,Catastrophic,No,1.0,857933.84,0.141
+Under Investigation,Moderate,No,0.641,34781.87,0.677
+Closed,Moderate,No,1.0,35906.1,0.095
+Reopened,Severe,No,0.795,67501.39,0.318
+Reported,Severe,No,0.599,67418.07,0.606
+Evaluated,Catastrophic,No,0.791,736388.98,0.323
+IBNR,Moderate,Yes,0.966,36196.88,0.875
+IBNR,Severe,Yes,0.71,105579.49,0.7
+Approved,Severe,No,0.863,152852.04,0.263
+Closed,Minor,No,1.0,4583.26,0.028
+Under Investigation,Catastrophic,No,0.528,369684.65,0.556
+Reported,Minor,No,0.536,3192.12,0.557
+Approved,Minor,No,0.958,5987.87,0.276
+Approved,Severe,No,0.951,168296.56,0.279
+Settled,Moderate,No,1.0,49501.09,0.081
+Evaluated,Minor,No,0.832,1232.02,0.104
+Approved,Severe,No,0.852,89805.13,0.138
+IBNR,Minor,Yes,0.924,5286.21,0.85
+Under Investigation,Catastrophic,No,0.651,956332.51,0.317
+Settled,Catastrophic,No,1.0,714672.55,0.005
+Reopened,Catastrophic,No,0.728,286369.46,0.585
+Reopened,Minor,No,0.87,3899.01,0.359
+Evaluated,Severe,No,0.825,137804.7,0.314
+IBNR,Severe,Yes,0.836,140814.02,0.545
+Under Investigation,Moderate,No,0.629,45523.64,0.466
+Reopened,Catastrophic,No,0.725,276068.67,0.471
+Settled,Severe,No,1.0,193038.88,0.103
+Reopened,Minor,No,0.627,1768.28,0.473
+Closed,Moderate,No,1.0,32254.83,0.088
+Closed,Minor,No,1.0,4697.28,0.131
+IBNR,Minor,Yes,0.991,6403.69,0.658
+Approved,Moderate,No,0.935,18969.79,0.132
+Closed,Minor,No,1.0,7863.45,0.086
+IBNR,Minor,Yes,0.883,6920.48,0.812
+Reported,Moderate,No,0.382,40496.38,0.915
+Closed,Minor,No,1.0,2632.65,0.021
+IBNR,Minor,Yes,0.743,6698.55,0.514
+Approved,Catastrophic,No,0.905,472716.79,0.211
+Closed,Minor,No,1.0,8950.08,0.023
+Reported,Minor,No,0.382,6957.45,0.719
+Reopened,Catastrophic,No,0.682,803954.51,0.346
+IBNR,Minor,Yes,0.785,7106.38,0.719
+Settled,Minor,No,1.0,2984.67,0.148
+Reported,Minor,No,0.361,9507.92,0.845
+Settled,Severe,No,1.0,99218.35,0.001
+IBNR,Moderate,Yes,0.739,31303.29,0.604
+Closed,Minor,No,1.0,4573.64,0.111
+IBNR,Minor,Yes,0.838,1700.76,0.641
+IBNR,Catastrophic,Yes,0.913,534155.17,0.552

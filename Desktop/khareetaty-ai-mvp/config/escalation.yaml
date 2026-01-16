@@ -1,0 +1,128 @@
+# Khareetaty AI - Escalation Configuration
+# Define thresholds and routing rules for automated escalation
+
+# Score-based escalation thresholds
+thresholds:
+  low:
+    score: 10
+    notify:
+      - role: analyst
+    channels:
+      - whatsapp
+    message_template: "⚠️ Low-priority hotspot detected in {zone} with score {score}."
+  
+  medium:
+    score: 20
+    notify:
+      - role: analyst
+      - role: superadmin
+    channels:
+      - whatsapp
+      - sms
+    message_template: "🔶 Medium-priority hotspot in {zone} with score {score}. Review recommended."
+  
+  high:
+    score: 40
+    notify:
+      - role: analyst
+      - role: superadmin
+    channels:
+      - whatsapp
+      - sms
+      - email
+    message_template: "🚨 HIGH PRIORITY: Hotspot in {zone} with score {score}. Immediate action required."
+  
+  critical:
+    score: 60
+    notify:
+      - role: superadmin
+      - phone: "+96566338736"  # Direct notification
+    channels:
+      - whatsapp
+      - sms
+      - email
+    message_template: "🔴 CRITICAL ALERT: Red zone detected in {zone} with score {score}. URGENT RESPONSE NEEDED."
+    auto_actions:
+      - create_task
+      - notify_command_center
+
+# Incident type specific rules
+incident_types:
+  vehicle_theft:
+    priority: high
+    notify_additional:
+      - department: traffic
+    escalate_after_count: 3  # Escalate if 3+ in same zone within 24h
+  
+  assault:
+    priority: high
+    notify_additional:
+      - department: patrol
+    escalate_after_count: 2
+  
+  drug_offense:
+    priority: critical
+    notify_additional:
+      - department: narcotics
+    escalate_immediately: true
+  
+  traffic_accident:
+    priority: medium
+    notify_additional:
+      - department: traffic
+      - department: ems
+
+# Governorate-specific routing
+governorate_routing:
+  Capital:
+    primary_contact: "capital_ops@moi.gov.kw"
+    phone: "+96512345001"
+  
+  Hawalli:
+    primary_contact: "hawalli_ops@moi.gov.kw"
+    phone: "+96512345002"
+  
+  Farwaniya:
+    primary_contact: "farwaniya_ops@moi.gov.kw"
+    phone: "+96512345003"
+  
+  "Mubarak Al-Kabeer":
+    primary_contact: "mubarak_ops@moi.gov.kw"
+    phone: "+96512345004"
+  
+  Ahmadi:
+    primary_contact: "ahmadi_ops@moi.gov.kw"
+    phone: "+96512345005"
+  
+  Jahra:
+    primary_contact: "jahra_ops@moi.gov.kw"
+    phone: "+96512345006"
+
+# Time-based rules
+time_rules:
+  night_shift:  # 10 PM - 6 AM
+    hours: [22, 23, 0, 1, 2, 3, 4, 5]
+    escalate_faster: true
+    additional_notify:
+      - role: superadmin
+  
+  weekend:  # Friday & Saturday
+    days: ["Friday", "Saturday"]
+    reduced_threshold: true  # Lower threshold by 20%
+
+# Retry and timeout settings
+retry_policy:
+  max_attempts: 3
+  retry_delay_seconds: 60
+  timeout_seconds: 300
+
+# Cooldown periods (prevent alert spam)
+cooldown:
+  same_zone_minutes: 30  # Don't re-alert same zone within 30 min
+  same_type_minutes: 15  # Don't re-alert same incident type within 15 min
+
+# Auto-resolution
+auto_resolution:
+  enabled: true
+  resolve_after_hours: 24  # Auto-resolve tasks after 24h if no update
+  notify_on_auto_resolve: true

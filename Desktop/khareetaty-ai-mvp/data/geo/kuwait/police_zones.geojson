@@ -1,0 +1,150 @@
+{
+  "type": "FeatureCollection",
+  "name": "kuwait_police_zones",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "PZ-CAPITAL",
+        "name_en": "Capital Police Zone",
+        "name_ar": "منطقة شرطة العاصمة",
+        "districts": ["CA-001", "CA-002", "CA-003", "CA-004", "CA-005"],
+        "headquarters": "Kuwait City",
+        "phone": "+965-112"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.95, 29.35],
+            [48.05, 29.35],
+            [48.05, 29.40],
+            [47.95, 29.40],
+            [47.95, 29.35]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "PZ-HAWALLI",
+        "name_en": "Hawalli Police Zone",
+        "name_ar": "منطقة شرطة حولي",
+        "districts": ["HA-001", "HA-002", "HA-003", "HA-004", "HA-005"],
+        "headquarters": "Hawalli",
+        "phone": "+965-112"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.00, 29.30],
+            [48.10, 29.30],
+            [48.10, 29.35],
+            [48.00, 29.35],
+            [48.00, 29.30]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "PZ-FARWANIYA",
+        "name_en": "Farwaniya Police Zone",
+        "name_ar": "منطقة شرطة الفروانية",
+        "districts": ["FA-001", "FA-002", "FA-003", "FA-004", "FA-005"],
+        "headquarters": "Farwaniya",
+        "phone": "+965-112"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.90, 29.25],
+            [48.00, 29.25],
+            [48.00, 29.35],
+            [47.90, 29.35],
+            [47.90, 29.25]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "PZ-MUBARAK",
+        "name_en": "Mubarak Al-Kabeer Police Zone",
+        "name_ar": "منطقة شرطة مبارك الكبير",
+        "districts": ["MU-001", "MU-002", "MU-003", "MU-004", "MU-005"],
+        "headquarters": "Mubarak Al-Kabeer",
+        "phone": "+965-112"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [48.00, 29.20],
+            [48.10, 29.20],
+            [48.10, 29.28],
+            [48.00, 29.28],
+            [48.00, 29.20]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "PZ-AHMADI",
+        "name_en": "Ahmadi Police Zone",
+        "name_ar": "منطقة شرطة الأحمدي",
+        "districts": ["AH-001", "AH-002", "AH-003", "AH-004", "AH-005"],
+        "headquarters": "Ahmadi",
+        "phone": "+965-112"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.80, 28.80],
+            [48.50, 28.80],
+            [48.50, 29.20],
+            [47.80, 29.20],
+            [47.80, 28.80]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "code": "PZ-JAHRA",
+        "name_en": "Jahra Police Zone",
+        "name_ar": "منطقة شرطة الجهراء",
+        "districts": ["JA-001", "JA-002", "JA-003", "JA-004", "JA-005"],
+        "headquarters": "Jahra",
+        "phone": "+965-112"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [47.50, 29.40],
+            [48.20, 29.40],
+            [48.20, 30.10],
+            [47.50, 30.10],
+            [47.50, 29.40]
+          ]
+        ]
+      }
+    }
+  ]
+}
